@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan(basePackages = {"pl.sda.costcontrol"})
+@ComponentScan(basePackages = {"pl.grabowski_durka"})
 @EnableWebMvc
 public class AppConfiguration extends WebMvcConfigurerAdapter {
 
@@ -24,9 +24,9 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
         return bean;
     }
 
-    @Override
+/*    @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/css/**").addResourceLocations("/resources/css/");
-    }
+    }*/
 
 }

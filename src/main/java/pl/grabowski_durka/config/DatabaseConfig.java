@@ -33,7 +33,7 @@ public class DatabaseConfig {
 
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("pl.sda.costcontrol.entity");
+        em.setPackagesToScan("pl.grabowski_durka.entity");
         em.setPersistenceUnitName("cost-control-pu");
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(properties);
