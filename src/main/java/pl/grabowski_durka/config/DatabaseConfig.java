@@ -44,9 +44,9 @@ public class DatabaseConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/cost-control ");
-        dataSource.setUsername("sda");
-        dataSource.setPassword("kebab");
+        dataSource.setUrl("jdbc:postgresql://pythonfan.pl:5432/votingapp ");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("#Gp8Rok1bf+V");
         return dataSource;
     }
 
