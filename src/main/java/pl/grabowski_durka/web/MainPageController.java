@@ -39,11 +39,11 @@ public class MainPageController {
         return "main";
     }
 
-    @GetMapping(value="/buildings")
+/*    @GetMapping(value="/buildings")
     public ModelAndView testPage(){
         ModelAndView mav = new ModelAndView("buildingsPage");
         mav.addObject("buildingsPage", buildingService.findBuildings());
         return mav;
-    }
+    }*/
 
 }

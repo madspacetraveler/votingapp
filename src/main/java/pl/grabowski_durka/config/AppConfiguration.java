@@ -24,9 +24,9 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
         return bean;
     }
 
-/*    @Override
+    @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/css/**").addResourceLocations("/resources/css/");
-    }*/
+    }
 
 }

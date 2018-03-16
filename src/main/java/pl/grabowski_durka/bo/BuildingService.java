@@ -9,6 +9,7 @@ import pl.grabowski_durka.repository.BuildingRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Marcin
@@ -25,13 +26,21 @@ public class BuildingService {
         this.buildingRepository=buildingRepository;
     }
 
-    public List<BuildingDto> getBuildings(){
-        List<BuildingDto> buildings = new ArrayList<>();
-        return buildings;
-    }
 
     public List<BuildingDto> findBuildings(){
-        return this.buildings;
+        return buildingRepository.findAll()
+                .stream()
+                .map(this::mapBuilding)
+                .collect(Collectors.toList());
+    }
+
+    private BuildingDto mapBuilding(Building building) {
+        return BuildingDto.builder()
+                .id(building.getId())
+                .adres(building.getAdres())
+                .area(building.getArea())
+                .flatCount(building.getFlatCount())
+                .build();
     }
 
 
