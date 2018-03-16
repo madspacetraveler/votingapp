@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<a href="buildings.jsp">testpage</a>
+<a href="buildings">testpage</a>
 
 
 

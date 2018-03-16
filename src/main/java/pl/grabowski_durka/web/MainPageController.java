@@ -25,10 +25,11 @@ public class MainPageController {
         return "main";
     }
 
-    @PostMapping(value = "/main")
+/*    @PostMapping(value = "/main")
     public String mainPostPage() {
         return "main";
-    }
+    }*/
+
 
     @GetMapping(value="/logout")
     public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
@@ -38,12 +39,5 @@ public class MainPageController {
         }
         return "main";
     }
-
-/*    @GetMapping(value="/buildings")
-    public ModelAndView testPage(){
-        ModelAndView mav = new ModelAndView("buildingsPage");
-        mav.addObject("buildingsPage", buildingService.findBuildings());
-        return mav;
-    }*/
 
 }

@@ -15,16 +15,11 @@ import java.util.stream.Collectors;
  * @author Marcin
  */
 @Service
-/*@RequiredArgsConstructor(onConstructor = @__(@Autowired))*/
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class BuildingService {
 
     private final BuildingRepository buildingRepository;
     private List<BuildingDto> buildings = new ArrayList<>();
-
-    @Autowired
-    public BuildingService(BuildingRepository buildingRepository){
-        this.buildingRepository=buildingRepository;
-    }
 
 
     public List<BuildingDto> findBuildings(){

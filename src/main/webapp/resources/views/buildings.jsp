@@ -13,16 +13,20 @@
     <title>building page</title>
 </head>
 <body>
-
-
-<p>test</p>
+<table>
+    <thead>Lista budynków: </thead>
+<tbody>
 <c:forEach items="${buildings}" var="building">
     <tr>
-        <td>${building.adres}</td>
-        <td>${building.area}</td>
-        <td>${building.flat_count}</td>
+        <td>ID: ${building.id}</td><br>
+        <td>Adres: ${building.adres}</td><br>
+        <td>Powierzchnia: ${building.area}</td><br>
+        <td>Liczba mieszkań: ${building.flatCount}</td><br>
     </tr>
 </c:forEach>
+</tbody>
+</table>
+
 
 </body>
 </html>
