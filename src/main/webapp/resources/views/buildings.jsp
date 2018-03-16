@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Marcin
-  Date: 15.03.2018
-  Time: 20:20
+  Date: 16.03.2018
+  Time: 17:12
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,14 +10,19 @@
 
 <html>
 <head>
-    <title>VotingApp</title>
+    <title>building page</title>
 </head>
 <body>
 
-<a href="buildings.jsp">testpage</a>
 
+<p>test</p>
+<c:forEach items="${buildings}" var="building">
+    <tr>
+        <td>${building.adres}</td>
+        <td>${building.area}</td>
+        <td>${building.flat_count}</td>
+    </tr>
+</c:forEach>
 
-
-test
 </body>
 </html>

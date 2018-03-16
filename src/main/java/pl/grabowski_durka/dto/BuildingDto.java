@@ -2,6 +2,8 @@ package pl.grabowski_durka.dto;
 
 import lombok.*;
 
+import javax.persistence.Id;
+
 /**
  * @author Marcin
  */
