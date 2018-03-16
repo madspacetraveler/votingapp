@@ -18,10 +18,12 @@
 <tbody>
 <c:forEach items="${buildings}" var="building">
     <tr>
-        <td>ID: ${building.id}</td><br>
-        <td>Adres: ${building.adres}</td><br>
-        <td>Powierzchnia: ${building.area}</td><br>
-        <td>Liczba mieszkań: ${building.flatCount}</td><br>
+        <td>
+            ID: ${building.id}<br>
+            Adres: ${building.adres}<br>
+            Powierzchnia: ${building.area}<br>
+            Liczba mieszkań: ${building.flatCount}<br>
+        </td>
     </tr>
 </c:forEach>
 </tbody>
