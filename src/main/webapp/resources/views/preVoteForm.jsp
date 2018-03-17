@@ -21,7 +21,7 @@
 <div class="container">
 <h2>Wybierz budynek dla którego chcesz przeprowadzić głosowanie:</h2>
 
-    <c:forEach items="${preVoteForm}" var="building">
+    <c:forEach items="${buildings}" var="building">
         <div class="row">
             <div class="col-sm-1">${building.id}</div>
             <div class="col-sm-6"><a href="voteForm/${building.id}">${building.adres}</a> </div>

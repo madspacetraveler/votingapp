@@ -11,7 +11,7 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Table(name = "buildings", schema = "public")
+@Table(name = "votings", schema = "public")
 
 public class Voting {
     @Id

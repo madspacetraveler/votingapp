@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import pl.grabowski_durka.dto.BuildingDto;
 import pl.grabowski_durka.entity.Building;
 import pl.grabowski_durka.repository.BuildingRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;

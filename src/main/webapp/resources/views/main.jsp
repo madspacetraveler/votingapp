@@ -17,11 +17,13 @@
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-
+<div class="row justify-content-xl-center">
 <ul>
     <li><a href="buildings">Przeglądaj listę budynków</a></li>
     <li><a href="resolutions">Podjęte uchwały</a></li>
     <li><a href="votings">Głosowania</a></li>
+    <li><a href="flats">Lista mieszkań</a></li>
 </ul>
+</div>
 </body>
 </html>

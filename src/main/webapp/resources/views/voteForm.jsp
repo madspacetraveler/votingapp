@@ -16,9 +16,37 @@
 </head>
 <body>
 <jsp:include page="menu.jsp" />
+<div class="container">
+    <div class="row justify-content-xl-center">
 
-ID: ${voteForm.id}
-Adres: ${voteForm.adres}
+        <h3>Dane budynku: </h3>
+        <div class="w-100"></div>
+        ID: ${building.id}
+        <div class="w-100"></div>
+        Adres: ${building.adres}
+        <div class="w-100"></div>
+    </div>
+    <div class="row justify-content-xl-center">
+        <h4>Lista mieszkań:</h4>
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-sm">ID: </div>
+            <div class="col-sm">Numer: </div>
+            <div class="col-sm">Powierzchnia: </div>
+            <div class="col-sm">Właściciel:</div>
+            <div class="w-100"></div>
+        </div>
+        <c:forEach items="${flats}" var="flats">
+            <div class="row">
+                <div class="col-sm">${flats.id}</div>
+                <div class="col-sm">${flats.flatNumber}</div>
+                <div class="col-sm">${flats.area}</div>
+                <div class="col-sm">${flats.authorizedVoter}</div>
+                <div class="w-100"></div>
+            </div>
+        </c:forEach>
 
+    </div>
+</div>
 </body>
 </html>

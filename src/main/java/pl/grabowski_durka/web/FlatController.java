@@ -13,14 +13,14 @@ import pl.grabowski_durka.bo.FlatService;
  */
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class BuildingController {
+public class FlatController {
 
-    private final BuildingService buildingService;
+    private final FlatService flatService;
 
-    @GetMapping(value="/buildings")
-    public ModelAndView buildingsPage(){
-        ModelAndView mav = new ModelAndView("buildings");
-        mav.addObject("buildings",buildingService.findBuildings());
+    @GetMapping(value="/flats")
+    public ModelAndView flatsPage(){
+        ModelAndView mav = new ModelAndView("flats");
+        mav.addObject("flats", flatService.findFlats());
         return mav;
     }
 }

@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import pl.grabowski_durka.bo.BuildingService;
+import pl.grabowski_durka.bo.FlatService;
+import pl.grabowski_durka.dto.BuildingDto;
+import pl.grabowski_durka.entity.Building;
 
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -20,13 +23,14 @@ public class VotingController {
     }
 
     private final BuildingService buildingService;
+    private final FlatService flatService;
 
 
     @GetMapping(value = "/preVoteForm")
     public ModelAndView preVoteFormPage() {
 
         ModelAndView mav = new ModelAndView("preVoteForm");
-        mav.addObject("preVoteForm",buildingService.findBuildings());
+        mav.addObject("buildings",buildingService.findBuildings());
 
         return mav;
     }
@@ -38,10 +42,11 @@ public class VotingController {
 
 
 
-    @GetMapping(value = "/voteForm/{id}")
-    public ModelAndView voteFormPageWithBuilding(@PathVariable("id") Long id) {
+    @GetMapping(value = "/voteForm/{buildingId}")
+    public ModelAndView voteFormPageWithBuilding(@PathVariable("buildingId") Long buildingId) {
         ModelAndView mav = new ModelAndView("voteForm");
-        mav.addObject("voteForm", buildingService.findBuildingById(id));
+        mav.addObject("building", buildingService.findBuildingById(buildingId));
+        mav.addObject("flats", flatService.findFlatsWithBuildingId(buildingId));
         return mav;
     }
 

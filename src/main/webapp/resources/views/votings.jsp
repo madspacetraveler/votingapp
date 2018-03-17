@@ -17,13 +17,13 @@
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-
+<div class="row justify-content-xl-center">
 <ul>
     <li><a href="preVoteForm">Rozpocznij głosowanie</a></li>
     <li><a href="votingsHistory">Historia głosowań</a></li>
 
-
-
+</ul>
+</div>
 
 </ul>
 

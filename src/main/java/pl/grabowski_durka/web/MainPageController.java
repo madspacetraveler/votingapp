@@ -13,7 +13,7 @@ public class MainPageController {
 
     private final BuildingService buildingService;
 
-    @GetMapping(value = "/main")
+    @GetMapping(value = "/")
     public String mainPage() {
         return "main";
     }
