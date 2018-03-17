@@ -27,6 +27,13 @@
     </div>
         <c:forEach items="${buildings}" var="building">
 
+
+
+
+
+
+
+
             <div class="row">
                 <div class="col">ID: </div>
                 <div class="col">${building.id}</div>
