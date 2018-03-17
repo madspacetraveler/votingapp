@@ -17,7 +17,6 @@
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-<h1>Witamy w systemie do głosowania dla wspólnot mieszkaniowych</h1>
 
 <ul>
     <li><a href="buildings">Przeglądaj listę budynków</a></li>
