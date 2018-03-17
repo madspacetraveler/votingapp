@@ -24,17 +24,19 @@ public class BuildingService {
 
 
     public List<BuildingDto> findBuildings(){
-        return buildingRepository.findAll()
+        buildings = buildingRepository.findAll()
                 .stream()
                 .map(this::mapBuilding)
                 .collect(Collectors.toList());
+        return buildings;
     }
 
     public BuildingDto findBuildingById(Long id){
-        return this.buildings.stream().filter(building -> building.getId().equals(id))
-                .findFirst().orElseThrow(()-> new NoSuchElementException());
+        return buildings.stream()
+            .filter(building -> building.getId().equals(id))
+            .findFirst()
+            .orElseThrow(()-> new NoSuchElementException());
     }
-
 
     private BuildingDto mapBuilding(Building building) {
         return BuildingDto.builder()
@@ -44,6 +46,4 @@ public class BuildingService {
                 .flatCount(building.getFlatCount())
                 .build();
     }
-
-
 }

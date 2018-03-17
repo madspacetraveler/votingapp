@@ -24,7 +24,7 @@
     <c:forEach items="${preVoteForm}" var="building">
         <div class="row">
             <div class="col-sm-1">${building.id}</div>
-            <div class="col-sm-6"><a href="voteForm">${building.adres}</a> </div>
+            <div class="col-sm-6"><a href="voteForm/${building.id}">${building.adres}</a> </div>
             <div class="w-100"></div>
         </div>
     </c:forEach>
