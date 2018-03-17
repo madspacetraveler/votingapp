@@ -7,9 +7,9 @@ import javax.persistence.Id;
 /**
  * @author Marcin
  */
+@Builder
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class BuildingDto {

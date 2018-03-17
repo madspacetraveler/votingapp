@@ -2,6 +2,7 @@
 ### Java ###
 *.class
 target/
+src/main/java/pl.grabowski_durka/config/DatabaseConfig.java
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 # Package Files #
