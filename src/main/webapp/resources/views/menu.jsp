@@ -12,5 +12,4 @@
 
 <ul>
     <li><a href="${pageContext.servletContext.contextPath}/main">Home</a></li>
-
 </ul>
