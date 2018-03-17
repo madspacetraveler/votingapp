@@ -62,4 +62,6 @@ public class DatabaseConfig {
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
+
+    //this should not be here
 }
