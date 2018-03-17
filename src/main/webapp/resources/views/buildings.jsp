@@ -32,41 +32,11 @@
         <div class="w-100"></div>
     </div>
         <c:forEach items="${buildings}" var="building">
-
-
-
     <div class="row">
         <div class="col-sm-1">${building.id}</div>
         <div class="col-sm-6">${building.adres}</div>
         <div class="w-100"></div>
     </div>
-
-
-
-
-
-<%--            <div class="row">
-                <div class="col">ID: </div>
-                <div class="col">${building.id}</div>
-            </div>
-        <div class="w-100"></div>
-            <div class="row">
-                <div class="col">Adres: </div>
-                <div class="col">${building.adres}</div>
-            </div>
-        <div class="w-100"></div>
-            <div class="row">
-                <div class="col">Powierzchnia: </div>
-                <div class="col">${building.area}</div>
-            </div>
-        <div class="w-100"></div>
-            <div class="row">
-                <div class="col">Ilość mieszkań: </div>
-                <div class="col">${building.flatCount}</div>
-            </div>
-        <div class="w-100"></div>--%>
-
-
         </c:forEach>
 
 </div>

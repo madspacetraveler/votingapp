@@ -10,7 +10,7 @@
 
 <html>
 <head>
-    <title>VotingApp</title>
+    <title>Głosowania</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -19,9 +19,17 @@
 <jsp:include page="menu.jsp" />
 
 <ul>
-    <li><a href="buildings">Przeglądaj listę budynków</a></li>
-    <li><a href="resolutions">Podjęte uchwały</a></li>
-    <li><a href="votings">Głosowania</a></li>
+    <li><a href="preVoteForm">Rozpocznij głosowanie</a></li>
+    <li><a href="votingsHistory">Historia głosowań</a></li>
+
+
+
+
 </ul>
+
+
+
+
+
 </body>
 </html>

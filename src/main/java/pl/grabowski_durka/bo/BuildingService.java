@@ -9,6 +9,7 @@ import pl.grabowski_durka.repository.BuildingRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 /**
@@ -28,6 +29,12 @@ public class BuildingService {
                 .map(this::mapBuilding)
                 .collect(Collectors.toList());
     }
+
+    public BuildingDto findBuildingById(Long id){
+        return this.buildings.stream().filter(building -> building.getId().equals(id))
+                .findFirst().orElseThrow(()-> new NoSuchElementException());
+    }
+
 
     private BuildingDto mapBuilding(Building building) {
         return BuildingDto.builder()
