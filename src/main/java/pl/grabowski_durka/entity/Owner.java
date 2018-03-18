@@ -24,12 +24,12 @@ public class Owner {
     private String surname;
 
     @Column(name = "pesel")
-    private int pesel;
+    private Long pesel;
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "phone")
-    private int phone;
+    private Long phone;
 
 }
