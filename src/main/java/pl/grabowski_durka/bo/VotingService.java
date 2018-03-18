@@ -12,6 +12,7 @@ import pl.grabowski_durka.repository.VotingRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,9 +48,10 @@ public class VotingService {
                 .build();
     }
 
-    public List<VotingDto> findVotingWithVotingId(Long id) {
+    public VotingDto findVotingById(Long id){
         return votings.stream()
-                .filter(voting -> voting.getBuildingId().equals(id))
-                .collect(Collectors.toList());
+                .filter(voting -> voting.getId().equals(id))
+                .findFirst()
+                .orElseThrow(()-> new NoSuchElementException());
     }
 }
