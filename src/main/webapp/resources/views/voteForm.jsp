@@ -30,9 +30,9 @@
         <h4>Lista mieszkań:</h4>
         <div class="w-100"></div>
         <div class="row">
-            <div class="col-sm">ID: </div>
-            <div class="col-sm">Numer: </div>
-            <div class="col-sm">Powierzchnia: </div>
+            <div class="col-sm-1">ID: </div>
+            <div class="col-sm-1">Numer: </div>
+            <div class="col-sm-1">Powierzchnia: </div>
             <div class="col-sm">Właściciel:</div>
 
         </div>
@@ -47,6 +47,7 @@
             </div>
             <div class="w-100"></div>
         </c:forEach>
+
 
     </div>
 </div>
