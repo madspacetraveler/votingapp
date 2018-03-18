@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import pl.grabowski_durka.bo.BuildingService;
 import pl.grabowski_durka.bo.FlatService;
+import pl.grabowski_durka.bo.OwnerService;
 import pl.grabowski_durka.dto.BuildingDto;
 import pl.grabowski_durka.entity.Building;
 
@@ -24,6 +25,7 @@ public class VotingController {
 
     private final BuildingService buildingService;
     private final FlatService flatService;
+    private final OwnerService ownerService;
 
 
     @GetMapping(value = "/preVoteForm")
@@ -47,6 +49,9 @@ public class VotingController {
         ModelAndView mav = new ModelAndView("voteForm");
         mav.addObject("building", buildingService.findBuildingById(buildingId));
         mav.addObject("flats", flatService.findFlatsWithBuildingId(buildingId));
+        mav.addObject("owners", ownerService.findOwners());
+        //mav.addObject("owner", ownerService.findOwnerOfFlat());
+
         return mav;
     }
 

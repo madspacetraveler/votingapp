@@ -28,7 +28,7 @@ public class DatabaseConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.grabowski_durka.dto.FlatDto;
+import pl.grabowski_durka.dto.OwnerDto;
 import pl.grabowski_durka.entity.Flat;
 import pl.grabowski_durka.repository.FlatRepository;
 
@@ -17,7 +18,6 @@ public class FlatService {
 
     private final FlatRepository flatRepository;
     private List<FlatDto> flats = new ArrayList<>();
-    private List<FlatDto> flats2 = new ArrayList<>();
 
     public List<FlatDto> findFlats() {
         flats = flatRepository.findAll()
@@ -41,12 +41,7 @@ public class FlatService {
         return flats.stream()
                 .filter(flat -> flat.getBuildingId().equals(id))
                 .collect(Collectors.toList());
-/*            flats2 = flatRepository.findAll()
-                    .stream()
-                    .map(this::mapFlats)
-                    .filter(flat -> flat.getBuildingId().equals(id))
-                    .collect(Collectors.toList());
-        return flats2;*/
-
     }
+
+
 }

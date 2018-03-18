@@ -34,16 +34,18 @@
             <div class="col-sm">Numer: </div>
             <div class="col-sm">Powierzchnia: </div>
             <div class="col-sm">Właściciel:</div>
-            <div class="w-100"></div>
+
         </div>
+        <div class="w-100"></div>
         <c:forEach items="${flats}" var="flats">
-            <div class="row justify-content-xl-center">
+            <div class="row">
                 <div class="col-sm">${flats.id}</div>
                 <div class="col-sm">${flats.flatNumber}</div>
                 <div class="col-sm">${flats.area}</div>
                 <div class="col-sm">${flats.authorizedVoter}</div>
-                <div class="w-100"></div>
+
             </div>
+            <div class="w-100"></div>
         </c:forEach>
 
     </div>

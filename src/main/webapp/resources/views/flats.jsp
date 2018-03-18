@@ -39,7 +39,9 @@
             <div class="col-sm-2">${flat.area}</div>
             <div class="col-sm-2">${flat.buildingId}</div>
             <div class="col-sm-2">${flat.authorizedVoter}</div>
-            <div class="col-sm-2">${flat.flatNumber}</div>
+            <div class="col-sm-2">${flat.flatNumber}
+       <%--     <c:if test="${flat.id==}"--%>
+            </div>
             <div class="w-100"></div>
         </div>
     </c:forEach>
