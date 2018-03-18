@@ -1,6 +1,7 @@
 package pl.grabowski_durka.dto;
 
 import lombok.*;
+import pl.grabowski_durka.entity.Owner;
 
 /**
  * @author Marcin
@@ -16,7 +17,7 @@ public class FlatDto {
     private float area;
     private Long buildingId;
     private int flatNumber;
-    private String authorizedVoter;
+    private Owner authorizedVoter;
 
 
 }

@@ -33,7 +33,7 @@ public class FlatService {
                 .area(flat.getArea())
                 .buildingId(flat.getBuildingId())
                 .flatNumber(flat.getFlatNumber())
-                .authorizedVoter(flat.getOwner().getName())
+                .authorizedVoter(flat.getOwner())
                 .build();
     }
 

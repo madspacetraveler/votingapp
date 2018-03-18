@@ -42,7 +42,7 @@
                 <div class="col-sm">${flats.id}</div>
                 <div class="col-sm">${flats.flatNumber}</div>
                 <div class="col-sm">${flats.area}</div>
-                <div class="col-sm">${flats.authorizedVoter}</div>
+                <div class="col-sm">${flats.authorizedVoter.surname}</div>
 
             </div>
             <div class="w-100"></div>
