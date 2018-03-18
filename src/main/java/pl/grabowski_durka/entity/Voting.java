@@ -1,6 +1,7 @@
 package pl.grabowski_durka.entity;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -11,6 +12,7 @@ import java.sql.Date;
 
 @Data
 @Entity
+@Getter
 @Table(name = "votings", schema = "public")
 
 public class Voting {
@@ -53,4 +55,8 @@ public class Voting {
 
     @Column(name = "result_content")
     private String resultContent;
+
+    public boolean getResult() {
+        return result;
+    }
 }
