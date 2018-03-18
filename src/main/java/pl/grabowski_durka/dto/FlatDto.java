@@ -16,7 +16,8 @@ public class FlatDto {
     private float area;
     private Long buildingId;
     private int flatNumber;
-    private Long authorizedVoter;
+    private String authorizedVoter;
+
 
 }
 

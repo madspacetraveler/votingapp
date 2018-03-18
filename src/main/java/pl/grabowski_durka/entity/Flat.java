@@ -3,6 +3,7 @@ package pl.grabowski_durka.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Marcin
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "flats", schema = "public")
 
-public class Flat {
+public class Flat implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,7 +27,11 @@ public class Flat {
     @Column(name = "flat_number")
     private int flatNumber;
 
-    @Column(name = "authorized_voter")
-    private Long authorizedVoter;
+/*    @Column(name = "authorized_voter")
+    private Long authorizedVoter;*/
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Owner owner;
 
 }
