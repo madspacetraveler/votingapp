@@ -10,6 +10,8 @@ import pl.grabowski_durka.entity.Voting;
 import pl.grabowski_durka.repository.FlatRepository;
 import pl.grabowski_durka.repository.VotingRepository;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -53,5 +55,26 @@ public class VotingService {
                 .filter(voting -> voting.getId().equals(id))
                 .findFirst()
                 .orElseThrow(()-> new NoSuchElementException());
+    }
+
+    public void addVoting(VotingDto votingDto) {
+        this.votings.add(VotingDto.builder()
+                .id(votingDto.getId())
+                .buildingId(votingDto.getBuildingId())
+                .date(Date.valueOf(LocalDate.now()))
+                .resolution("rezolution")
+                .title("Sprzątanie po psach")
+                .content("Wszyscy mają lazić z workami na gówno w kieszeni")
+                .votesFor(votingDto.getVotesFor())
+                .votesAgainst(votingDto.getVotesAgainst())
+                .votesAbstain(votingDto.getVotesAbstain())
+                .moderator("Grzegorz Grabowski")
+                .secretary("Marcin Durka")
+                .result(false)
+                .resultContent("Wlazł kotek na płotek")
+                .build()
+        );
+
+
     }
 }

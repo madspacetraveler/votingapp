@@ -30,7 +30,6 @@ public class DatabaseConfig {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan("pl.grabowski_durka.entity");

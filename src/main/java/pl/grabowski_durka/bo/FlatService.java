@@ -4,10 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.grabowski_durka.dto.FlatDto;
-import pl.grabowski_durka.dto.OwnerDto;
 import pl.grabowski_durka.entity.Flat;
 import pl.grabowski_durka.repository.FlatRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

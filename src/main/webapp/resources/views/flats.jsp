@@ -23,8 +23,8 @@
         <div class="col">
             <h2>Lista mieszkań: </h2>
         </div>
-
     </div>
+
     <div class="row">
         <div class="col-sm-1">ID: </div>
         <div class="col-sm-2">powierzchnia:</div>

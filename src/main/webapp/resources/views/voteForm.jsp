@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -26,30 +27,77 @@
         Adres: ${building.adres}
         <div class="w-100"></div>
     </div>
+
+    <form:form action="addVoting" modelAttribute="voting" method="post">
+
+        <form:label path="resolution">Numer uchwaly:</form:label>
+        <form:input path="resolution"/>
+        <form:label path="title">Tytul uchwaly:</form:label>
+        <form:input path="title"/>
+        <form:label path="content">Tresc uchwaly</form:label>
+        <form:input path="content"/>
+        <form:label path="moderator">Moderator: </form:label>
+        <form:input path="moderator"/>
+        <form:label path="secretary">Sekretarz: </form:label>
+        <form:input path="secretary"/>
+        <input type="submit" name="apply" value="Zatwierdz"/>
+    </form:form>
+
+
+
+
+
+
     <div class="row justify-content-xl-center">
-        <h4>Lista mieszkań:</h4>
-        <div class="w-100"></div>
+        <div class="col">
+            <h2>Lista mieszkań: </h2>
+        </div>
+    </div>
+
         <div class="row">
-            <div class="col-sm">ID: </div>
-            <div class="col-sm">Numer: </div>
-            <div class="col-sm">Powierzchnia: </div>
-            <div class="col-sm">Właściciel:</div>
+            <div class="col-sm-1">ID: </div>
+            <div class="col-sm-2">Numer: </div>
+            <div class="col-sm-2">Powierzchnia: </div>
+            <div class="col-sm-2">Właściciel:</div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1">Za:</div>
+            <div class="col-sm-1">Przeciw:</div>
+            <div class="col-sm-1">Wstrzymał się:</div>
+            <div class="col-sm-1"></div>
 
         </div>
         <div class="w-100"></div>
+<%--    <form:form action="addVote" modelAttribute="voting" method="post">--%>
         <c:forEach items="${flats}" var="flats">
+<%--            <form:input type="hidden" path="id"/><br>--%>
             <div class="row">
-                <div class="col-sm">${flats.id}</div>
-                <div class="col-sm">${flats.flatNumber}</div>
-                <div class="col-sm">${flats.area}</div>
-                <div class="col-sm">${flats.authorizedVoter.surname}</div>
-
+                <div class="col-sm-1">${flats.id}</div>
+                <div class="col-sm-2">${flats.flatNumber}</div>
+                <div class="col-sm-2">${flats.area}</div>
+                <div class="col-sm-2">${flats.authorizedVoter.surname}</div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-1">
+<%--                    <form:checkbox path="votesFor"></form:checkbox>--%>
+                </div>
+                <div class="col-sm-1">
+<%--                    <form:checkbox path="votesAgainst"></form:checkbox>--%>
+                </div>
+                <div class="col-sm-1">
+<%--                    <form:checkbox path="votesAbstain"></form:checkbox>--%>
+                </div>
+                <div class="col-sm-1"></div>
             </div>
             <div class="w-100"></div>
         </c:forEach>
 
 
-    </div>
+<%--        <input type="submit" name="apply" value="Zatwierdz">
+    </form:form>--%>
+
+
+
+
+
 </div>
 </body>
 </html>
