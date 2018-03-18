@@ -33,13 +33,13 @@
         <div class="col-sm-2">numer mieszkania</div>
         <div class="w-100"></div>
     </div>
-    <c:forEach items="${flats}" var="flats">
+    <c:forEach items="${flats}" var="flat">
         <div class="row">
-            <div class="col-sm-1">${flats.id}</div>
-            <div class="col-sm-2">${flats.area}</div>
-            <div class="col-sm-2">${flats.buildingId}</div>
-            <div class="col-sm-2">${flats.authorizedVoter}</div>
-            <div class="col-sm-2">${flats.flatNumber}</div>
+            <div class="col-sm-1">${flat.id}</div>
+            <div class="col-sm-2">${flat.area}</div>
+            <div class="col-sm-2">${flat.buildingId}</div>
+            <div class="col-sm-2">${flat.authorizedVoter}</div>
+            <div class="col-sm-2">${flat.flatNumber}</div>
             <div class="w-100"></div>
         </div>
     </c:forEach>

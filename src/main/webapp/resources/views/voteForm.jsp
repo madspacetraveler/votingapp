@@ -37,7 +37,7 @@
             <div class="w-100"></div>
         </div>
         <c:forEach items="${flats}" var="flats">
-            <div class="row">
+            <div class="row justify-content-xl-center">
                 <div class="col-sm">${flats.id}</div>
                 <div class="col-sm">${flats.flatNumber}</div>
                 <div class="col-sm">${flats.area}</div>
