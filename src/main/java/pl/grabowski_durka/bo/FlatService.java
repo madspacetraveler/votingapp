@@ -29,7 +29,7 @@ public class FlatService {
         return FlatDto.builder()
                 .id(flat.getId())
                 .area(flat.getArea())
-                .buildingId(flat.getBuildingId())
+                .building(flat.getBuildingId())
                 .flatNumber(flat.getFlatNumber())
                 .authorizedVoter(flat.getOwner())
                 .build();
@@ -37,7 +37,7 @@ public class FlatService {
 
     public List<FlatDto> findFlatsWithBuildingId(Long id) {
         return flats.stream()
-                .filter(flat -> flat.getBuildingId().equals(id))
+                .filter(flat -> flat.getBuilding().equals(id))
                 .collect(Collectors.toList());
     }
 

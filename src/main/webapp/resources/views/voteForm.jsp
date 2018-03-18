@@ -20,11 +20,8 @@
 <jsp:include page="menu.jsp" />
 <div class="container justify-content-xl-center">
     <div class="row ">
-        <h4>Dane budynku: </h4>
-        <div class="w-100"></div>
-        ID: ${building.id}
-        <div class="w-100"></div>
-        Adres: ${building.adres}
+        <h4>Budynek: ${building.adres}</h4>
+
         <div class="w-100"></div>
     </div>
 
@@ -43,44 +40,40 @@
     </form:form>--%>
     <div class="row justify-content-xl-center">
         <div class="col">
-            <h2>Lista mieszkań: </h2>
+            <h4>Lista mieszkań: </h4>
         </div>
     </div>
 
         <div class="row bg-dark text-white">
             <div class="col-sm-1">ID: </div>
-            <div class="col-sm-2">Numer: </div>
+            <div class="col-sm-1">Numer: </div>
             <div class="col-sm-2">Powierzchnia: </div>
-            <div class="col-sm-2">Właściciel:</div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-4">Właściciel:</div>
             <div class="col-sm-1">Za:</div>
             <div class="col-sm-1">Przeciw:</div>
-            <div class="col-sm-1">Wstrzymał się:</div>
-            <div class="col-sm-1"></div>
-
+            <div class="col-sm-2">Wstrzymał się:</div>
         </div>
         <div class="w-100"></div>
 <%--    <form:form action="addVote" modelAttribute="voting" method="post">--%>
-        <c:forEach items="${flats}" var="flats">
+        <c:forEach items="${flats}" var="flat">
 <%--            <form:input type="hidden" path="id"/><br>--%>
-            <div class="row rowstriped border-left border-right">
-                <div class="col-sm-1">${flats.id}</div>
-                <div class="col-sm-2">${flats.flatNumber}</div>
-                <div class="col-sm-2">${flats.area}</div>
-                <div class="col-sm-2">${flats.authorizedVoter.surname}</div>
-                <div class="col-sm-1"></div>
+            <div class="row row-striped border-left border-right">
+                <div class="col-sm-1">${flat.id}</div>
+                <div class="col-sm-1">${flat.flatNumber}</div>
+                <div class="col-sm-2">${flat.area}</div>
+                <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
                 <div class="col-sm-1">
 <%--                    <form:checkbox path="votesFor"></form:checkbox>--%>
                 </div>
                 <div class="col-sm-1">
 <%--                    <form:checkbox path="votesAgainst"></form:checkbox>--%>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
 <%--                    <form:checkbox path="votesAbstain"></form:checkbox>--%>
                 </div>
-                <div class="col-sm-1"></div>
+
+                <div class="w-100 border-bottom"></div>
             </div>
-            <div class="w-100 border-bottom"></div>
         </c:forEach>
 
 

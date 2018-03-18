@@ -23,7 +23,7 @@
 <h4>Wybierz budynek dla którego chcesz przeprowadzić głosowanie:</h4>
 
     <c:forEach items="${buildings}" var="building">
-        <div class="row rowstriped border-left border-right">
+        <div class="row row-striped border-left border-right">
             <div class="col-sm-1">${building.id}</div>
             <div class="col-sm-6"><a href="voteForm/${building.id}">${building.adres}</a> </div>
             <div class="w-100 border-bottom"></div>

@@ -30,7 +30,7 @@
         <div class="w-100"></div>
     </div>
         <c:forEach items="${buildings}" var="building">
-    <div class="row rowstriped border-left border-right">
+    <div class="row row-striped border-left border-right">
         <div class="col-sm-1">${building.id}</div>
         <div class="col-sm-6">${building.adres}</div>
         <div class="w-100 border-bottom"></div>

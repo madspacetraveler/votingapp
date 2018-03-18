@@ -28,21 +28,22 @@
         <div class="row bg-dark text-white">
             <div class="col-sm-1">ID: </div>
             <div class="col-sm-2">Powierzchnia:</div>
-            <div class="col-sm-2">Adres budynku:</div>
+            <div class="col-sm-3">Adres budynku:</div>
+            <div class="col-sm-1">Nr m.</div>
             <div class="col-sm-4">Właściciel</div>
-            <div class="col-sm-2">Nr mieszkania</div>
             <div class="w-100"></div>
         </div>
 
         <c:forEach items="${flats}" var="flat">
-            <div class="rowstriped row border-left border-right">
+            <div class="row-striped row border-left border-right">
                 <div class="col-sm-1">${flat.id}</div>
                 <div class="col-sm-2">${flat.area}</div>
-                <div class="col-sm-2">${flat.buildingId}</div>
+                <div class="col-sm-3">${flat.building}</div>
+                <div class="col-sm-1">${flat.flatNumber}</div>
                 <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname} </div>
-                <div class="col-sm-2">${flat.flatNumber}
+
            <%--     <c:if test="${flat.id==}"--%>
-                </div>
+
                 <div class="w-100 border-bottom"></div>
             </div>
         </c:forEach>

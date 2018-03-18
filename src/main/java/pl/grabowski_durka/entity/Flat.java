@@ -23,6 +23,10 @@ public class Flat implements Serializable{
 
     @Column(name = "buildingId")
     private Long buildingId;
+/*
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Building building;*/
 
     @Column(name = "flat_number")
     private int flatNumber;
