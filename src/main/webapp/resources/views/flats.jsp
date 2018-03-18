@@ -11,40 +11,41 @@
 <html>
 <head>
     <title>building page</title>
-    <%--    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">--%>
-
+    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-<div class="container">
-    <div class="row justify-content-xl-center">
+<div class="container justify-content-xl-center">
+    <div class="row">
         <div class="col">
-            <h2>Lista mieszkań: </h2>
+            <h4>Lista mieszkań: </h4>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-1">ID: </div>
-        <div class="col-sm-2">powierzchnia:</div>
-        <div class="col-sm-2">buildingid: </div>
-        <div class="col-sm-2">ownerid</div>
-        <div class="col-sm-2">numer mieszkania</div>
-        <div class="w-100"></div>
-    </div>
-    <c:forEach items="${flats}" var="flat">
-        <div class="row">
-            <div class="col-sm-1">${flat.id}</div>
-            <div class="col-sm-2">${flat.area}</div>
-            <div class="col-sm-2">${flat.buildingId}</div>
-            <div class="col-sm-2">${flat.authorizedVoter.surname}</div>
-            <div class="col-sm-2">${flat.flatNumber}
-       <%--     <c:if test="${flat.id==}"--%>
-            </div>
+        <div class="row bg-dark text-white">
+            <div class="col-sm-1">ID: </div>
+            <div class="col-sm-2">Powierzchnia:</div>
+            <div class="col-sm-2">Adres budynku:</div>
+            <div class="col-sm-4">Właściciel</div>
+            <div class="col-sm-2">Nr mieszkania</div>
             <div class="w-100"></div>
         </div>
-    </c:forEach>
+
+        <c:forEach items="${flats}" var="flat">
+            <div class="rowstriped row border-left border-right">
+                <div class="col-sm-1">${flat.id}</div>
+                <div class="col-sm-2">${flat.area}</div>
+                <div class="col-sm-2">${flat.buildingId}</div>
+                <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname} </div>
+                <div class="col-sm-2">${flat.flatNumber}
+           <%--     <c:if test="${flat.id==}"--%>
+                </div>
+                <div class="w-100 border-bottom"></div>
+            </div>
+        </c:forEach>
 
 </div>
 

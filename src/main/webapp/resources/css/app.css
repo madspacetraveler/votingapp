@@ -1,0 +1,8 @@
+
+.rowstriped:nth-child(odd){
+
+}
+
+.rowstriped:nth-child(even){
+    background-color: lavender;
+}

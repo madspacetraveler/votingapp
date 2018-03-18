@@ -8,13 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Formularz głosowania</title>
+    <title>Szczegóły budynku</title>
+    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="menu.jsp" />
 
 
-Formularz głosowania
+Szczegóły budynku
 
 
 

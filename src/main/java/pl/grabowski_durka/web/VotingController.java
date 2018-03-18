@@ -33,6 +33,7 @@ public class VotingController {
     private final VotingService votingService;
 
 
+
     @GetMapping(value = "/preVoteForm")
     public ModelAndView preVoteFormPage() {
         ModelAndView mav = new ModelAndView("preVoteForm");
@@ -57,7 +58,7 @@ public class VotingController {
 
 
     @GetMapping(value = "voteForm/addVote")
-    public String addCost(Model model) {
+    public String addVoting(Model model) {
         model.addAttribute("voting", new VotingDto());
         return "voteForm";
     }
