@@ -15,14 +15,12 @@ import java.util.stream.Collectors;
 public class FlatService {
 
     private final FlatRepository flatRepository;
-    private List<FlatDto> flats = new ArrayList<>();
 
     public List<FlatDto> findFlats() {
-        flats = flatRepository.findAll()
+        return flatRepository.findAll()
                 .stream()
                 .map(this::mapFlats)
                 .collect(Collectors.toList());
-        return flats;
     }
 
     private FlatDto mapFlats(Flat flat) {
@@ -36,8 +34,8 @@ public class FlatService {
     }
 
     public List<FlatDto> findFlatsWithBuildingId(Long id) {
-        return flats.stream()
-                .filter(flat -> flat.getBuilding().equals(id))
+        return flatRepository.findByBuildingId(id)
+                .stream().map(this::mapFlats)
                 .collect(Collectors.toList());
     }
 

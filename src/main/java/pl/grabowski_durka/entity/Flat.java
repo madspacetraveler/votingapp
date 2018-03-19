@@ -34,8 +34,8 @@ public class Flat implements Serializable{
 /*    @Column(name = "authorized_voter")
     private Long authorizedVoter;*/
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "authorized_voter")
     private Owner owner;
 
 }

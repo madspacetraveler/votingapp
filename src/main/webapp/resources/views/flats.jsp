@@ -40,7 +40,7 @@
                 <div class="col-sm-2">${flat.area}</div>
                 <div class="col-sm-3">${flat.building}</div>
                 <div class="col-sm-1">${flat.flatNumber}</div>
-                <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname} </div>
+                <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
 
            <%--     <c:if test="${flat.id==}"--%>
 
