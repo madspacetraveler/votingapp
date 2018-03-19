@@ -27,7 +27,7 @@ public class FlatService {
         return FlatDto.builder()
                 .id(flat.getId())
                 .area(flat.getArea())
-                .building(flat.getBuildingId())
+                .building(flat.getBuilding())
                 .flatNumber(flat.getFlatNumber())
                 .authorizedVoter(flat.getOwner())
                 .build();

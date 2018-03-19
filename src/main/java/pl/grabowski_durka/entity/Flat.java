@@ -21,8 +21,12 @@ public class Flat implements Serializable{
     @Column(name = "area")
     private float area;
 
-    @Column(name = "buildingId")
-    private Long buildingId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "buildingid")
+    private Building building;
+
+/*    @Column(name = "buildingId")
+    private Long buildingId;*/
 
     @Column(name = "flat_number")
     private int flatNumber;
