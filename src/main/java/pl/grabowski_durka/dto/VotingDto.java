@@ -21,7 +21,9 @@ public class VotingDto {
     private String resolution;
     private String title;
     private String content;
-    private List<FlatDto> flatDtos;
+    private float votesFor;
+    private float votesAgainst;
+    private float votesAbstain;
     private String moderator;
     private String secretary;
     private boolean result;
