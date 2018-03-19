@@ -25,9 +25,6 @@ public class Flat implements Serializable{
     @JoinColumn(name = "buildingid")
     private Building building;
 
-/*    @Column(name = "buildingId")
-    private Long buildingId;*/
-
     @Column(name = "flat_number")
     private int flatNumber;
 
