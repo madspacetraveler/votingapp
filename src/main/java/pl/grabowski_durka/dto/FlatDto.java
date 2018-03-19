@@ -19,6 +19,9 @@ public class FlatDto {
     private Building building;
     private int flatNumber;
     private Owner authorizedVoter;
+    private boolean votesFor;
+    private boolean votesAgainst;
+    private boolean votesAbstain;
 
 
 }

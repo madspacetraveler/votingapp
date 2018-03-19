@@ -3,6 +3,7 @@ package pl.grabowski_durka.dto;
 import lombok.*;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * @author Marcin
@@ -20,9 +21,7 @@ public class VotingDto {
     private String resolution;
     private String title;
     private String content;
-    private float votesFor;
-    private float votesAgainst;
-    private float votesAbstain;
+    private List<FlatDto> flatDtos;
     private String moderator;
     private String secretary;
     private boolean result;
