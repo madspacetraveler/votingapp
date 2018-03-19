@@ -15,6 +15,7 @@ import pl.grabowski_durka.bo.FlatService;
 import pl.grabowski_durka.bo.OwnerService;
 import pl.grabowski_durka.bo.VotingService;
 import pl.grabowski_durka.dto.VotingDto;
+import pl.grabowski_durka.dto.VotingFormDto;
 import pl.grabowski_durka.entity.Voting;
 
 @Controller
@@ -53,7 +54,7 @@ public class VotingController {
         mav.addObject("flats", flatService.findFlatsWithBuildingId(buildingId));
         mav.addObject("owners", ownerService.findOwners());
         mav.addObject("votings", votingService.findVotings());
-        mav.addObject("voting", new VotingDto());
+        mav.addObject("voting", new VotingFormDto());
         return mav;
     }
 
