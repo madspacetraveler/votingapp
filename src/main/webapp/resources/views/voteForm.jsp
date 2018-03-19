@@ -25,19 +25,19 @@
         <div class="w-100"></div>
     </div>
 
-<%--    <form:form action="addVote" modelAttribute="voting" method="post">
-        <form:label path="resolution">Numer uchwaly:</form:label>
-        <form:input path="resolution"/>
-        <form:label path="title">Tytul uchwaly:</form:label>
-        <form:input path="title"/>
-        <form:label path="content">Tresc uchwaly</form:label>
-        <form:input path="content"/>
-        <form:label path="moderator">Moderator: </form:label>
-        <form:input path="moderator"/>
-        <form:label path="secretary">Sekretarz: </form:label>
-        <form:input path="secretary"/>
-        <input type="submit" name="apply" value="Zatwierdz"/>
-    </form:form>--%>
+        <form:form action="addVote" modelAttribute="voting" method="post">
+            <form:label path="resolution">Numer uchwaly:</form:label>
+            <form:input path="resolution"/>
+            <form:label path="title">Tytul uchwaly:</form:label>
+            <form:input path="title"/>
+            <form:label path="content">Tresc uchwaly</form:label>
+            <form:input path="content"/>
+            <form:label path="moderator">Moderator: </form:label>
+            <form:input path="moderator"/>
+            <form:label path="secretary">Sekretarz: </form:label>
+            <form:input path="secretary"/>
+        </form:form>
+
     <div class="row justify-content-xl-center">
         <div class="col">
             <h4>Lista mieszkań: </h4>
@@ -76,9 +76,8 @@
             </div>
         </c:forEach>
 
+    <input type="submit" name="apply" value="Zatwierdz">
 
-<%--        <input type="submit" name="apply" value="Zatwierdz">
-    </form:form>--%>
 
 
 

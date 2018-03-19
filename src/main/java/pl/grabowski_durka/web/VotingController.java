@@ -52,7 +52,8 @@ public class VotingController {
         mav.addObject("building", buildingService.findBuildingById(buildingId));
         mav.addObject("flats", flatService.findFlatsWithBuildingId(buildingId));
         mav.addObject("owners", ownerService.findOwners());
-        //mav.addObject("votings", votingService.)
+        mav.addObject("votings", votingService.findVotings());
+        mav.addObject("voting", new VotingDto());
         return mav;
     }
 
@@ -71,8 +72,5 @@ public class VotingController {
         }
         return "redirect: votings";
     }
-
-
-
 
 }
