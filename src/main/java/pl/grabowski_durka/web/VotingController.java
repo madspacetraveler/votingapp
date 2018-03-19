@@ -18,6 +18,12 @@ import pl.grabowski_durka.dto.VotingDto;
 import pl.grabowski_durka.dto.VotingFormDto;
 import pl.grabowski_durka.entity.Voting;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 
@@ -74,4 +80,15 @@ public class VotingController {
         return "redirect: votings";
     }
 
+    protected Map referenceData(HttpServletRequest request) throws Exception {
+
+        Map referenceData = new HashMap();
+        List<String> webFrameworkList = new ArrayList<String>();
+        webFrameworkList.add("voteFor");
+        webFrameworkList.add("voteAgainst");
+        webFrameworkList.add("voteAbstain");
+        referenceData.put("webFrameworkList", webFrameworkList);
+
+        return referenceData;
+    }
 }

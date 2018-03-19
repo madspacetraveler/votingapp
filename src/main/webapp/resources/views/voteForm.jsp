@@ -27,23 +27,20 @@
 
         <form:form action="addVote" modelAttribute="voting" method="post">
             <form:label path="resolution">Numer uchwaly:</form:label>
-            <form:input path="resolution"/>
+            <form:input path="resolution"/><br>
             <form:label path="title">Tytul uchwaly:</form:label>
-            <form:input path="title"/>
+            <form:input path="title"/><br>
             <form:label path="content">Tresc uchwaly</form:label>
-            <form:input path="content"/>
+            <form:input path="content"/><br>
             <form:label path="moderator">Moderator: </form:label>
-            <form:input path="moderator"/>
+            <form:input path="moderator"/><br>
             <form:label path="secretary">Sekretarz: </form:label>
-            <form:input path="secretary"/>
-        </form:form>
-
+            <form:input path="secretary"/><br>
     <div class="row justify-content-xl-center">
         <div class="col">
             <h4>Lista mieszkań: </h4>
         </div>
     </div>
-
         <div class="row bg-dark text-white">
             <div class="col-sm-1">ID: </div>
             <div class="col-sm-1">Numer: </div>
@@ -54,16 +51,17 @@
             <div class="col-sm-2">Wstrzymał się:</div>
         </div>
         <div class="w-100"></div>
-<%--    <form:form action="addVote" modelAttribute="voting" method="post">--%>
+
         <c:forEach items="${flats}" var="flat">
-<%--            <form:input type="hidden" path="id"/><br>--%>
+
             <div class="row row-striped border-left border-right">
                 <div class="col-sm-1">${flat.id}</div>
                 <div class="col-sm-1">${flat.flatNumber}</div>
                 <div class="col-sm-2">${flat.area}</div>
                 <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
                 <div class="col-sm-1">
-<%--                    <form:checkbox path="votesFor"></form:checkbox>--%>
+
+                <%--                    <form:checkbox path="votesFor"></form:checkbox>--%>
                 </div>
                 <div class="col-sm-1">
 <%--                    <form:checkbox path="votesAgainst"></form:checkbox>--%>
@@ -77,7 +75,7 @@
         </c:forEach>
 
     <input type="submit" name="apply" value="Zatwierdz">
-
+        </form:form>
 
 
 
