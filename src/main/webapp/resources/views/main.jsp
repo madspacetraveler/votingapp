@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Marcin
-  Date: 15.03.2018
-  Time: 20:20
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -22,7 +16,8 @@
 <jsp:include page="menu.jsp" />
 <div class="row justify-content-xl-center">
 
-    <div class="btn-group btn-group-lg">
+    Main Page
+<%--    <div class="btn-group btn-group-lg">
         <a href="buildings" class="btn btn-info">Przeglądaj listę budynków</a>
         <a href="resolutions" class="btn btn-info">Podjęte uchwały</a>
         <a href="flats" class="btn btn-info">Lista mieszkań</a>
@@ -34,7 +29,7 @@
                 <a class="dropdown-item" href="votingHistory">Historia</a>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 </div>
 </body>
