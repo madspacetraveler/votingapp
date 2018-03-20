@@ -47,6 +47,7 @@ public class VotingService {
                 .secretary(voting.getSecretary())
                 .result(voting.getResult())
                 .resultContent(voting.getResultContent())
+                .flatVoteDtoList()
                 .build();
     }
 

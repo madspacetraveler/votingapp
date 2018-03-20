@@ -28,4 +28,5 @@ public class VotingDto {
     private String secretary;
     private boolean result;
     private String resultContent;
+    private List<FlatDto> flatVoteDtoList;
 }

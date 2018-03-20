@@ -60,13 +60,13 @@
                 <div class="col-sm-2">${flat.area}</div>
                 <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
                 <div class="col-sm-1">
-                   <%-- <form:checkbox path=></form:checkbox>--%>
+                    <form:checkbox path="flatVoteDtoList"></form:checkbox>
                 </div>
                 <div class="col-sm-1">
-<%--                    <form:checkbox path="votesAgainst"></form:checkbox>--%>
+                    <form:checkbox path="flatVoteDtoList"></form:checkbox>
                 </div>
                 <div class="col-sm-2">
-<%--                    <form:checkbox path="votesAbstain"></form:checkbox>--%>
+                    <form:checkbox path="flatVoteDtoList"></form:checkbox>
                 </div>
 
                 <div class="w-100 border-bottom"></div>

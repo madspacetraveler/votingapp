@@ -60,7 +60,7 @@ public class VotingController {
         mav.addObject("flats", flatService.findFlatsWithBuildingId(buildingId));
         mav.addObject("owners", ownerService.findOwners());
         mav.addObject("votings", votingService.findVotings());
-        mav.addObject("voting", new VotingFormDto());
+        mav.addObject("voting", new VotingDto());
         return mav;
     }
 
