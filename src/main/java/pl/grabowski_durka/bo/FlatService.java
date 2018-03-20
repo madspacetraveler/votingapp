@@ -39,5 +39,9 @@ public class FlatService {
                 .collect(Collectors.toList());
     }
 
+    public FlatDto findFlatById(Long id) {
+        return mapFlats(flatRepository.findOne(id));
+    }
+
 
 }

@@ -26,12 +26,10 @@ public class BuildingService {
                 .stream()
                 .map(this::mapBuilding)
                 .collect(Collectors.toList());
-
     }
 
     public BuildingDto findBuildingById(Long id){
         return mapBuilding(buildingRepository.findOne(id));
-
     }
 
     private BuildingDto mapBuilding(Building building) {
