@@ -63,15 +63,14 @@
                     <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
                 </div>
                 <div class="col-sm-1">
-                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
+                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesAgainst"></form:checkbox>
                 </div>
                 <div class="col-sm-2">
-                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
+                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesAbstain"></form:checkbox>
                 </div>
                 <div class="w-100 border-bottom"></div>
             </div>
         </c:forEach>
-
     <input type="submit" name="apply" value="Zatwierdz" class="btn btn-success">
         </form:form>
 
