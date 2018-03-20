@@ -52,7 +52,7 @@
         </div>
         <div class="w-100"></div>
 
-        <c:forEach items="${flats}" var="flat">
+        <c:forEach items="${voting.flatVoteDtoList}" var="flat" varStatus="flatStatus">
 
             <div class="row row-striped border-left border-right">
                 <div class="col-sm-1">${flat.id}</div>
@@ -60,15 +60,14 @@
                 <div class="col-sm-2">${flat.area}</div>
                 <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
                 <div class="col-sm-1">
-                    <form:checkbox path="flatVoteDtoList"></form:checkbox>
+                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
                 </div>
                 <div class="col-sm-1">
-                    <form:checkbox path="flatVoteDtoList"></form:checkbox>
+                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
                 </div>
                 <div class="col-sm-2">
-                    <form:checkbox path="flatVoteDtoList"></form:checkbox>
+                    <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
                 </div>
-
                 <div class="w-100 border-bottom"></div>
             </div>
         </c:forEach>

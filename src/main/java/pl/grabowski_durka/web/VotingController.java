@@ -15,8 +15,6 @@ import pl.grabowski_durka.bo.FlatService;
 import pl.grabowski_durka.bo.OwnerService;
 import pl.grabowski_durka.bo.VotingService;
 import pl.grabowski_durka.dto.VotingDto;
-import pl.grabowski_durka.dto.VotingFormDto;
-import pl.grabowski_durka.entity.Voting;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -55,12 +53,10 @@ public class VotingController {
 
     @GetMapping(value = "/voteForm/{buildingId}")
     public ModelAndView voteFormPageWithBuilding(@PathVariable("buildingId") Long buildingId) {
+        VotingDto votingDto = new VotingDto();
+        votingDto.setFlatVoteDtoList(flatService.findFlatsWithBuildingId(buildingId));
         ModelAndView mav = new ModelAndView("voteForm");
-        mav.addObject("building", buildingService.findBuildingById(buildingId));
-        mav.addObject("flats", flatService.findFlatsWithBuildingId(buildingId));
-        mav.addObject("owners", ownerService.findOwners());
-        mav.addObject("votings", votingService.findVotings());
-        mav.addObject("voting", new VotingDto());
+        mav.addObject("voting", votingDto);
         return mav;
     }
 
@@ -71,6 +67,7 @@ public class VotingController {
         return "voteForm";
     }
 
+    //zliczanie i zapisanie głosów
     @PostMapping(value = "voteForm/addVote")
     public String saveVoting(@ModelAttribute("voting") VotingDto form,
     BindingResult result, Model model){

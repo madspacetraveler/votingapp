@@ -22,15 +22,17 @@ import java.util.stream.Collectors;
 public class VotingService {
 
     private final VotingRepository votingRepository;
-    private List<VotingDto> votings = new ArrayList<>();
+
+    private final FlatService flatService;
 
     public List<VotingDto> findVotings() {
-        votings = votingRepository.findAll()
+        return votingRepository.findAll()
                 .stream()
                 .map(this::mapVotings)
                 .collect(Collectors.toList());
-        return votings;
     }
+
+
 
     private VotingDto mapVotings(Voting voting) {
         return VotingDto.builder()
@@ -47,34 +49,34 @@ public class VotingService {
                 .secretary(voting.getSecretary())
                 .result(voting.getResult())
                 .resultContent(voting.getResultContent())
-                .flatVoteDtoList()
+                .flatVoteDtoList(flatService.findFlatsWithBuildingId(voting.getBuildingId()))
                 .build();
     }
 
-    public VotingDto findVotingById(Long id){
-        return votings.stream()
-                .filter(voting -> voting.getId().equals(id))
-                .findFirst()
-                .orElseThrow(()-> new NoSuchElementException());
-    }
+//    public VotingDto findVotingById(Long id){
+//        return votings.stream()
+//                .filter(voting -> voting.getId().equals(id))
+//                .findFirst()
+//                .orElseThrow(()-> new NoSuchElementException());
+//    }
 
     public void addVoting(VotingDto votingDto) {
-        this.votings.add(VotingDto.builder()
-                .id(votingDto.getId())
-                .buildingId(votingDto.getBuildingId())
-                .date(Date.valueOf(LocalDate.now()))
-                .resolution("rezolution")
-                .title("Sprzątanie po psach")
-                .content("Wszyscy mają lazić z workami na gówno w kieszeni")
-                .votesFor(votingDto.getVotesFor())
-                .votesAgainst(votingDto.getVotesAgainst())
-                .votesAbstain(votingDto.getVotesAbstain())
-                .moderator("Grzegorz Grabowski")
-                .secretary("Marcin Durka")
-                .result(false)
-                .resultContent("Wlazł kotek na płotek")
-                .build()
-        );
+//        this.votings.add(VotingDto.builder()
+//                .id(votingDto.getId())
+//                .buildingId(votingDto.getBuildingId())
+//                .date(Date.valueOf(LocalDate.now()))
+//                .resolution("rezolution")
+//                .title("Sprzątanie po psach")
+//                .content("Wszyscy mają lazić z workami na gówno w kieszeni")
+//                .votesFor(votingDto.getVotesFor())
+//                .votesAgainst(votingDto.getVotesAgainst())
+//                .votesAbstain(votingDto.getVotesAbstain())
+//                .moderator("Grzegorz Grabowski")
+//                .secretary("Marcin Durka")
+//                .result(false)
+//                .resultContent("Wlazł kotek na płotek")
+//                .build()
+//        );
 
 
     }
