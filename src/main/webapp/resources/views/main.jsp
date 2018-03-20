@@ -19,12 +19,15 @@
 <body>
 <jsp:include page="menu.jsp" />
 <div class="row justify-content-xl-center">
-<ul>
-    <li><a href="buildings">Przeglądaj listę budynków</a></li>
-    <li><a href="resolutions">Podjęte uchwały</a></li>
-    <li><a href="votings">Głosowania</a></li>
-    <li><a href="flats">Lista mieszkań</a></li>
-</ul>
+
+    <div class="btn-group-vertical btn-group-lg">
+        <a href="buildings" class="btn btn-primary">Przeglądaj listę budynków</a>
+        <a href="resolutions" class="btn btn-primary">Podjęte uchwały</a>
+        <a href="votings" class="btn btn-primary">Głosowania</a>
+        <a href="flats" class="btn btn-primary">Lista mieszkań</a>
+    </div>
+
+
 </div>
 </body>
 </html>

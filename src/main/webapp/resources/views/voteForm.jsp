@@ -60,8 +60,7 @@
                 <div class="col-sm-2">${flat.area}</div>
                 <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
                 <div class="col-sm-1">
-
-                <%--                    <form:checkbox path="votesFor"></form:checkbox>--%>
+                   <%-- <form:checkbox path=></form:checkbox>--%>
                 </div>
                 <div class="col-sm-1">
 <%--                    <form:checkbox path="votesAgainst"></form:checkbox>--%>
@@ -74,7 +73,7 @@
             </div>
         </c:forEach>
 
-    <input type="submit" name="apply" value="Zatwierdz">
+    <input type="submit" name="apply" value="Zatwierdz" class="btn btn-success">
         </form:form>
 
 
