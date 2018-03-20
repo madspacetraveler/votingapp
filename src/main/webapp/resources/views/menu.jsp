@@ -16,7 +16,7 @@
     </div>
     <div class="w-100"></div>
     <div class="row">
-        <a href="${pageContext.servletContext.contextPath}/">Strona Głowna</a>
+        <a href="${pageContext.servletContext.contextPath}/" class="btn btn-secondary">Strona Głowna</a>
     </div>
 
 </div>
