@@ -60,7 +60,6 @@ public class VotingController {
         return mav;
     }
 
-
     @GetMapping(value = "voteForm/addVote")
     public String addVoting(Model model) {
         model.addAttribute("voting", new VotingDto());

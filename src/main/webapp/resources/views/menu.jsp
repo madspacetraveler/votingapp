@@ -6,7 +6,9 @@
 
 <div class="row justify-content-xl-center">
     <div class="row">
-        <h1>--- System do głosowania dla wspólnot mieszkaniowych ---</h1>
+        <div class="row justify-content-xl-center">
+        <h3>System do głosowania dla wspólnot mieszkaniowych</h3>
+        </div>
     </div>
     <div class="w-100"></div>
 
