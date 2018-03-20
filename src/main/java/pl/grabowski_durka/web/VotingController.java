@@ -14,6 +14,7 @@ import pl.grabowski_durka.bo.BuildingService;
 import pl.grabowski_durka.bo.FlatService;
 import pl.grabowski_durka.bo.OwnerService;
 import pl.grabowski_durka.bo.VotingService;
+import pl.grabowski_durka.dto.BuildingDto;
 import pl.grabowski_durka.dto.VotingDto;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,6 +56,7 @@ public class VotingController {
     public ModelAndView voteFormPageWithBuilding(@PathVariable("buildingId") Long buildingId) {
         VotingDto votingDto = new VotingDto();
         votingDto.setFlatVoteDtoList(flatService.findFlatsWithBuildingId(buildingId));
+        votingDto.setBuilding(buildingService.findBuildingById(buildingId));
         ModelAndView mav = new ModelAndView("voteForm");
         mav.addObject("voting", votingDto);
         return mav;

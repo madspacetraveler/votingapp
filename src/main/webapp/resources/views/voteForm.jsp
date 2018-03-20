@@ -23,7 +23,7 @@
 <jsp:include page="menu.jsp" />
 <div class="container justify-content-xl-center">
     <div class="row ">
-        <h4>Budynek: ${building.adres}</h4>
+        <h4>Budynek: ${voting.building.adres}</h4>
 
         <div class="w-100"></div>
     </div>
@@ -34,7 +34,7 @@
             <form:label path="title">Tytul uchwaly:</form:label>
             <form:input path="title"/><br>
             <form:label path="content">Tresc uchwaly</form:label>
-            <form:input path="content"/><br>
+            <form:textarea path="content"/><br>
             <form:label path="moderator">Moderator: </form:label>
             <form:input path="moderator"/><br>
             <form:label path="secretary">Sekretarz: </form:label>

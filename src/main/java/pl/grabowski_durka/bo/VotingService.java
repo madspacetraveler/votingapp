@@ -37,7 +37,7 @@ public class VotingService {
     private VotingDto mapVotings(Voting voting) {
         return VotingDto.builder()
                 .id(voting.getId())
-                .buildingId(voting.getBuildingId())
+//                .buildingId(voting.getBuildingId())
                 .date(voting.getDate())
                 .resolution(voting.getResolution())
                 .title(voting.getTitle())
