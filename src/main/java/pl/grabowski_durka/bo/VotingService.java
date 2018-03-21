@@ -33,8 +33,6 @@ public class VotingService {
                 .collect(Collectors.toList());
     }
 
-
-
     private VotingDto mapVotings(Voting voting) {
         return VotingDto.builder()
                 .id(voting.getId())
