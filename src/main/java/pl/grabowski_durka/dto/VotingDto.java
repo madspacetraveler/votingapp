@@ -16,6 +16,7 @@ import java.util.List;
 public class VotingDto {
 
     private Long id;
+    private Long buildingId;
     private BuildingDto building;
     private Date date;
     private String resolution;

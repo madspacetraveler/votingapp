@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -28,7 +29,8 @@
         <div class="w-100"></div>
     </div>
 
-        <form:form action="addVote" modelAttribute="voting" method="post">
+        <form:form action="apply" modelAttribute="voting" method="post">
+            <form:input type="hidden" path="building.area"/><br>
              <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Nr uchwały</span>
@@ -60,12 +62,6 @@
                 <form:input path="secretary" type="text" class="form-control" placeholder="Sekretarz" aria-label="Sekretarz" aria-describedby="basic-addon4"/><br>
             </div>
 
-<%--            <form:label path="content">Tresc uchwaly</form:label>
-            <form:textarea path="content"/><br>--%>
-<%--            <form:label path="moderator">Moderator: </form:label>
-            <form:input path="moderator"/><br>
-            <form:label path="secretary">Sekretarz: </form:label>
-            <form:input path="secretary"/><br>--%>
     <div class="row justify-content-xl-center">
         <div class="col">
             <h4>Lista mieszkań: </h4>
@@ -98,12 +94,13 @@
                 <div class="col-sm-2 pt-1">
                     <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesAbstain"></form:checkbox>
                 </div>
+                <form:input type="hidden" path="flatVoteDtoList[${flatStatus.index}].area"/>
                 <div class="w-100"></div>
             </div>
         </c:forEach>
             <div class="w-100"></div>
             <div class="row justify-content-xl-center col-sm-12 mb-3 center-block">
-                <input type="submit" name="apply" value="Zatwierdz" class="btn btn-success btn-lg m-3">
+                <input type="submit" name="apply" value="Zatwierdź" class="btn btn-success btn-lg m-3">
                 <input type="submit" name="cancel" value="Anuluj" class="btn btn-danger btn-lg m-3">
             </div>
 

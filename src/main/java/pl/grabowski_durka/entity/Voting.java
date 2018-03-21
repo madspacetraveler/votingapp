@@ -1,5 +1,6 @@
 package pl.grabowski_durka.entity;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 
@@ -13,6 +14,7 @@ import java.sql.Date;
 @Data
 @Entity
 @Getter
+@Builder
 @Table(name = "votings", schema = "public")
 
 public class Voting {

@@ -12,6 +12,7 @@ import pl.grabowski_durka.repository.VotingRepository;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -61,23 +62,50 @@ public class VotingService {
 //    }
 
     public void addVoting(VotingDto votingDto) {
-//        this.votings.add(VotingDto.builder()
-//                .id(votingDto.getId())
-//                .buildingId(votingDto.getBuildingId())
-//                .date(Date.valueOf(LocalDate.now()))
-//                .resolution("rezolution")
-//                .title("Sprzątanie po psach")
-//                .content("Wszyscy mają lazić z workami na gówno w kieszeni")
-//                .votesFor(votingDto.getVotesFor())
-//                .votesAgainst(votingDto.getVotesAgainst())
-//                .votesAbstain(votingDto.getVotesAbstain())
-//                .moderator("Grzegorz Grabowski")
-//                .secretary("Marcin Durka")
-//                .result(false)
-//                .resultContent("Wlazł kotek na płotek")
-//                .build()
-//        );
+        float areaBuilding = votingDto.getBuilding().getArea();
+        //        votingDto.getFlatVoteDtoList().stream().filter(FlatDto::isVotesFor).count()
 
+        votingDto.setVotesFor(0);
+        votingDto.setVotesAgainst(0);
+        votingDto.setVotesAgainst(0);
+        for ( FlatDto flatDto : votingDto.getFlatVoteDtoList() )
+        {
+            if ( flatDto.isVotesFor() ){
+                votingDto.setVotesFor(votingDto.getVotesFor() + flatDto.getArea()/areaBuilding);
+            }
+            if ( flatDto.isVotesAgainst() ){
+                votingDto.setVotesAgainst(votingDto.getVotesAgainst() + flatDto.getArea()/areaBuilding);
+            }
+            if ( flatDto.isVotesAbstain() ){
+                votingDto.setVotesAbstain(votingDto.getVotesAbstain() + flatDto.getArea()/areaBuilding);
+            }
+        }
+        if ( votingDto.getVotesFor() > 0.5 ) {
+            votingDto.setResult(true);
+        }
+        votingDto.setDate(Date.valueOf(LocalDate.now()));
+
+        votingRepository.save(mapResult(votingDto));
+
+    }
+
+    private Voting mapResult(VotingDto votingDto) {
+
+        return Voting.builder()
+                .id(votingDto.getId())
+                .buildingId(votingDto.getBuildingId())
+                .date(votingDto.getDate())
+                .resolution(votingDto.getResolution())
+                .title(votingDto.getTitle())
+                .content(votingDto.getContent())
+                .votesFor(votingDto.getVotesFor())
+                .votesAgainst(votingDto.getVotesAgainst())
+                .votesAbstain(votingDto.getVotesAbstain())
+                .moderator(votingDto.getModerator())
+                .secretary(votingDto.getSecretary())
+                .result(votingDto.isResult())
+                .resultContent(votingDto.getResultContent())
+                .build();
 
     }
 }

@@ -69,24 +69,24 @@ public class VotingController {
     }
 
     //zliczanie i zapisanie głosów
-    @PostMapping(value = "voteForm/addVote")
+    @PostMapping(value = "voteForm/apply")
     public String saveVoting(@ModelAttribute("voting") VotingDto form,
     BindingResult result, Model model){
         if (!result.hasErrors()){
             votingService.addVoting(form);
         }
-        return "redirect: votings";
+        return "redirect: ../votings";
     }
 
-    protected Map referenceData(HttpServletRequest request) throws Exception {
-
-        Map referenceData = new HashMap();
-        List<String> webFrameworkList = new ArrayList<String>();
-        webFrameworkList.add("voteFor");
-        webFrameworkList.add("voteAgainst");
-        webFrameworkList.add("voteAbstain");
-        referenceData.put("webFrameworkList", webFrameworkList);
-
-        return referenceData;
-    }
+//    protected Map referenceData(HttpServletRequest request) throws Exception {
+//
+//        Map referenceData = new HashMap();
+//        List<String> webFrameworkList = new ArrayList<String>();
+//        webFrameworkList.add("voteFor");
+//        webFrameworkList.add("voteAgainst");
+//        webFrameworkList.add("voteAbstain");
+//        referenceData.put("webFrameworkList", webFrameworkList);
+//
+//        return referenceData;
+//    }
 }
