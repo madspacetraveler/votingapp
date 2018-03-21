@@ -15,9 +15,9 @@
     <div class="row justify-content-xl-center">
 
         <div class="btn-group btn-group-lg mb-3">
-            <a href="${pageContext.servletContext.contextPath}/" class="btn btn-info">Strona Głowna</a>
-            <a href="buildings" class="btn btn-info">Przeglądaj listę budynków</a>
+            <a href="${pageContext.servletContext.contextPath}/" class="btn btn-info">Strona główna</a>
             <a href="resolutions" class="btn btn-info">Podjęte uchwały</a>
+            <a href="buildings" class="btn btn-info">Lista budynków</a>
             <a href="flats" class="btn btn-info">Lista mieszkań</a>
             <div class="btn-group btn-group-lg">
                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">

@@ -40,4 +40,6 @@ public class BuildingService {
                 .flatCount(building.getFlatCount())
                 .build();
     }
+
+
 }

@@ -16,11 +16,13 @@ import pl.grabowski_durka.bo.FlatService;
 public class BuildingController {
 
     private final BuildingService buildingService;
+    private final FlatService flatService;
 
     @GetMapping(value="/buildings")
     public ModelAndView buildingsPage(){
         ModelAndView mav = new ModelAndView("buildings");
         mav.addObject("buildings",buildingService.findBuildings());
+        mav.addObject("flats",flatService);
         return mav;
     }
 }

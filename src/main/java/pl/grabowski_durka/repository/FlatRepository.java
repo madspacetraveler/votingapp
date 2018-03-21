@@ -10,4 +10,5 @@ import java.util.List;
 public interface FlatRepository extends JpaRepository<Flat, Long> {
 
     List<Flat> findByBuildingId(Long buildingId);
+
 }

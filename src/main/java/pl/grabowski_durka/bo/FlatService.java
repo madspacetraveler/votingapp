@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.grabowski_durka.dto.FlatDto;
+import pl.grabowski_durka.entity.Building;
 import pl.grabowski_durka.entity.Flat;
 import pl.grabowski_durka.repository.FlatRepository;
 import java.util.ArrayList;
@@ -43,5 +44,11 @@ public class FlatService {
         return mapFlats(flatRepository.findOne(id));
     }
 
+    public Long countFlatsInBuilding(Long id){
+        return flatRepository.findAll()
+                .stream()
+                .filter(flat -> flat.getFlatNumber()==(id))
+                .count();
+    }
 
 }
