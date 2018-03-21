@@ -14,9 +14,41 @@
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-<div class="row justify-content-xl-center">
 
-    Main Page
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-3 bg-dark text-white border border-dark rounded-top text-center">
+                Uchwały
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 bg-dark text-white border border-dark rounded-top text-center">
+                Budynki
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 bg-dark text-white border border-dark rounded-top text-center">
+                Mieszkania
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-sm-3 bg-lightgrey border border-dark rounded-bottom">
+                Przyjęte uchwały: ${null}<br>
+                Odrzucone uchwały: ${null}<br>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 bg-lightgrey border border-dark rounded-bottom">
+                Ilość budynków: ${buildings.countBuildings()}<br>
+                Łączna powierzchnia: ${flats.allFlatsArea()}<br>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 bg-lightgrey border border-dark rounded-bottom">
+                Łącznie mieszkań: ${flats.countFlats()}<br>
+                Srednia pow. mieszkania: ${flats.allFlatsArea()/flats.countFlats()}
+            </div>
+        </div>
+    </div>
+
+
+
 <%--    <div class="btn-group btn-group-lg">
         <a href="buildings" class="btn btn-info">Przeglądaj listę budynków</a>
         <a href="resolutions" class="btn btn-info">Podjęte uchwały</a>
@@ -31,6 +63,6 @@
         </div>
     </div>--%>
 
-</div>
+
 </body>
 </html>

@@ -51,4 +51,18 @@ public class FlatService {
                 .count();
     }
 
+    public Long countFlats(){
+        return flatRepository.findAll()
+                .stream()
+                .count();
+    }
+
+    public Double allFlatsArea(){
+        return flatRepository.findAll()
+                .stream()
+                .filter(flat -> flat.getArea() > 0)
+                .mapToDouble(flat -> flat.getArea())
+                .sum();
+    }
+
 }

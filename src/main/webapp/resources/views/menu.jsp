@@ -14,9 +14,9 @@
 
     <div class="row justify-content-xl-center">
 
-        <div class="btn-group btn-group-lg mb-3">
+        <div class="btn-group btn-group-lg mb-3 justify-content-xl-center">
             <a href="${pageContext.servletContext.contextPath}/" class="btn btn-info">Strona główna</a>
-            <a href="resolutions" class="btn btn-info">Podjęte uchwały</a>
+            <a href="#" class="btn btn-info">Podjęte uchwały</a>
             <a href="buildings" class="btn btn-info">Lista budynków</a>
             <a href="flats" class="btn btn-info">Lista mieszkań</a>
             <div class="btn-group btn-group-lg">

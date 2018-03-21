@@ -2,3 +2,7 @@
 .row-striped:nth-child(even){
     background-color: lavender;
 }
+
+.bg-lightgrey{
+    background-color: lightgrey;
+}

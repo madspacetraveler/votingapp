@@ -40,6 +40,10 @@ public class BuildingService {
                 .flatCount(building.getFlatCount())
                 .build();
     }
+    public Long countBuildings(){
+        return buildingRepository.findAll().stream().count();
+    }
+
 
 
 }
