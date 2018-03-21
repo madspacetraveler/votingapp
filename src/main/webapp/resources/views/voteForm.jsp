@@ -22,7 +22,7 @@
 <body>
 <jsp:include page="menu.jsp" />
 <div class="container justify-content-xl-center">
-    <div class="row ">
+    <div class="row pl-5">
         <h4>Budynek: ${voting.building.adres}</h4>
 
         <div class="w-100"></div>
@@ -89,19 +89,24 @@
                 <div class="col-sm-1">${flat.flatNumber}</div>
                 <div class="col-sm-2">${flat.area}</div>
                 <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
-                <div class="col-sm-1">
+                <div class="col-sm-1 pt-1">
                     <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesFor"></form:checkbox>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-1 pt-1">
                     <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesAgainst"></form:checkbox>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 pt-1">
                     <form:checkbox path="flatVoteDtoList[${flatStatus.index}].votesAbstain"></form:checkbox>
                 </div>
-                <div class="w-100 border-bottom"></div>
+                <div class="w-100"></div>
             </div>
         </c:forEach>
-    <input type="submit" name="apply" value="Zatwierdz" class="btn btn-success">
+            <div class="w-100"></div>
+            <div class="row justify-content-xl-center col-sm-12 mb-3 center-block">
+                <input type="submit" name="apply" value="Zatwierdz" class="btn btn-success btn-lg m-3">
+                <input type="submit" name="cancel" value="Anuluj" class="btn btn-danger btn-lg m-3">
+            </div>
+
         </form:form>
 
 
