@@ -29,16 +29,43 @@
     </div>
 
         <form:form action="addVote" modelAttribute="voting" method="post">
-            <form:label path="resolution">Numer uchwaly:</form:label>
-            <form:input path="resolution"/><br>
-            <form:label path="title">Tytul uchwaly:</form:label>
-            <form:input path="title"/><br>
-            <form:label path="content">Tresc uchwaly</form:label>
-            <form:textarea path="content"/><br>
-            <form:label path="moderator">Moderator: </form:label>
+             <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nr uchwały</span>
+                </div>
+                <form:input path="resolution" type="text" class="form-control" placeholder="Nr uchwały" aria-label="Nr uchwały" aria-describedby="basic-addon1"/><br>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">Tytuł</span>
+                </div>
+                <form:input path="title" type="text" class="form-control" placeholder="Tytuł" aria-label="Tytuł" aria-describedby="basic-addon1"/><br>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Treść uchwały</span>
+                </div>
+                    <form:textarea path="content" type="textarea" class="form-control" aria-label="Treść uchwały"/><br>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Moderator</span>
+                </div>
+                <form:input path="moderator" type="text" class="form-control" placeholder="Moderator" aria-label="Moderator" aria-describedby="basic-addon3"/><br>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon4">Sekretarz</span>
+                </div>
+                <form:input path="secretary" type="text" class="form-control" placeholder="Sekretarz" aria-label="Sekretarz" aria-describedby="basic-addon4"/><br>
+            </div>
+
+<%--            <form:label path="content">Tresc uchwaly</form:label>
+            <form:textarea path="content"/><br>--%>
+<%--            <form:label path="moderator">Moderator: </form:label>
             <form:input path="moderator"/><br>
             <form:label path="secretary">Sekretarz: </form:label>
-            <form:input path="secretary"/><br>
+            <form:input path="secretary"/><br>--%>
     <div class="row justify-content-xl-center">
         <div class="col">
             <h4>Lista mieszkań: </h4>
