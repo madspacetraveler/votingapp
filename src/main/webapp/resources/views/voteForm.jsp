@@ -20,6 +20,7 @@
     </div>
         <form:form action="apply" modelAttribute="voting" method="post">
             <form:input type="hidden" path="building.area"/><br>
+            <form:input type="hidden" path="building.id"/><br>
              <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Nr uchwały</span>
