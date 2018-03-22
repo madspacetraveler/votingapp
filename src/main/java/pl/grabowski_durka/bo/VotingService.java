@@ -52,7 +52,7 @@ public class VotingService {
 //                .orElseThrow(()-> new NoSuchElementException());
 //    }
 
-    public void addVoting(VotingDto votingDto) {
+    public VotingDto addVoting(VotingDto votingDto) {
         float areaBuilding = votingDto.getBuilding().getArea();
         votingDto.setVotesFor(0);
         votingDto.setVotesAgainst(0);
@@ -71,7 +71,11 @@ public class VotingService {
         }
         if ( votingDto.getVotesFor() > 0.5 ) { votingDto.setResult(true); }
         votingDto.setDate(Date.valueOf(LocalDate.now()));
-        votingRepository.save(mapResult(votingDto));
+
+        Voting voting = mapResult(votingDto);
+        voting = votingRepository.save(voting);
+
+        return mapVotings(voting);
     }
 
     private Voting mapResult(VotingDto votingDto) {
@@ -103,5 +107,9 @@ public class VotingService {
                 .stream()
                 .map(this::mapVotings)
                 .collect(Collectors.toList());
+    }
+
+    public VotingDto findVotingById(Long id) {
+        return mapVotings(votingRepository.findOne(id));
     }
 }

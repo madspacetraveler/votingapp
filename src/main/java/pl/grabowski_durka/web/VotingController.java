@@ -71,15 +71,17 @@ public class VotingController {
     //zliczanie i zapisanie głosów
     @PostMapping(value = "voteForm/apply")
     public String saveVoting(@ModelAttribute("voting") VotingDto form,
-    BindingResult result, Model model){
+        BindingResult result, Model model){
         if (!result.hasErrors()){
-            votingService.addVoting(form);
+            model.addAttribute("votingAdded", votingService.addVoting(form));
         }
-        return "redirect: ../votingAdded";
+        return "votingAdded";
     }
 
-    @GetMapping(value = "/votingAdded")
-    public String votingAddedPage() {
-        return "votingAdded";
+    @GetMapping(value = "/votingAdded/{votingId}")
+    public ModelAndView votingsAddedPage(@PathVariable("votingId") Long id) {
+        ModelAndView mav = new ModelAndView("votingAdded");
+        mav.addObject("votingAdded", votingService.findVotingById(id));
+        return mav;
     }
 }

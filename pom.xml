@@ -12,6 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.springframework.security.version>3.2.3.RELEASE</org.springframework.security.version>
+    <org.springframework.version>4.0.4.RELEASE</org.springframework.version>
   </properties>
 
   <dependencies>
@@ -98,6 +100,12 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+      <version>${org.springframework.security.version}</version>
     </dependency>
   </dependencies>
 
