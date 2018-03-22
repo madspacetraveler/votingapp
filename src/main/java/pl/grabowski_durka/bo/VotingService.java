@@ -23,15 +23,7 @@ import java.util.stream.Collectors;
 public class VotingService {
 
     private final VotingRepository votingRepository;
-
     private final FlatService flatService;
-
-    public List<VotingDto> findVotings() {
-        return votingRepository.findAll()
-                .stream()
-                .map(this::mapVotings)
-                .collect(Collectors.toList());
-    }
 
     private VotingDto mapVotings(Voting voting) {
         return VotingDto.builder()
@@ -61,8 +53,6 @@ public class VotingService {
 
     public void addVoting(VotingDto votingDto) {
         float areaBuilding = votingDto.getBuilding().getArea();
-        //        votingDto.getFlatVoteDtoList().stream().filter(FlatDto::isVotesFor).count()
-
         votingDto.setVotesFor(0);
         votingDto.setVotesAgainst(0);
         votingDto.setVotesAgainst(0);
@@ -78,13 +68,9 @@ public class VotingService {
                 votingDto.setVotesAbstain(votingDto.getVotesAbstain() + flatDto.getArea()/areaBuilding);
             }
         }
-        if ( votingDto.getVotesFor() > 0.5 ) {
-            votingDto.setResult(true);
-        }
+        if ( votingDto.getVotesFor() > 0.5 ) { votingDto.setResult(true); }
         votingDto.setDate(Date.valueOf(LocalDate.now()));
-
         votingRepository.save(mapResult(votingDto));
-
     }
 
     private Voting mapResult(VotingDto votingDto) {
@@ -104,6 +90,16 @@ public class VotingService {
                 .result(votingDto.isResult())
                 .resultContent(votingDto.getResultContent())
                 .build();
+    }
 
+    public Long countResolutions(){ return (long) votingRepository.findAll().size(); }
+
+    public Long countVotings(){ return (long) votingRepository.findAll().size(); }
+
+    public List<VotingDto> findVotings() {
+        return votingRepository.findAll()
+                .stream()
+                .map(this::mapVotings)
+                .collect(Collectors.toList());
     }
 }

@@ -28,17 +28,17 @@ import java.util.Map;
 
 public class VotingController {
 
-    @GetMapping(value = "/votings")
-    public String votingsPage() {
-        return "votings";
-    }
-
     private final BuildingService buildingService;
     private final FlatService flatService;
     private final OwnerService ownerService;
     private final VotingService votingService;
 
-
+    @GetMapping(value = "/votings")
+    public ModelAndView votingsPage() {
+        ModelAndView mav = new ModelAndView("votings");
+        mav.addObject("votings", votingService.findVotings());
+        return mav;
+    }
 
     @GetMapping(value = "/preVoteForm")
     public ModelAndView preVoteFormPage() {
@@ -75,7 +75,7 @@ public class VotingController {
         if (!result.hasErrors()){
             votingService.addVoting(form);
         }
-        return "redirect: ../votings";
+        return "redirect: ../votingAdded";
     }
 
 //    protected Map referenceData(HttpServletRequest request) throws Exception {

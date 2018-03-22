@@ -18,6 +18,7 @@ import java.sql.Date;
 @Table(name = "votings", schema = "public")
 
 public class Voting {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -61,4 +62,6 @@ public class Voting {
     public boolean getResult() {
         return result;
     }
+
+
 }

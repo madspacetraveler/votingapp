@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import pl.grabowski_durka.bo.BuildingService;
 import pl.grabowski_durka.bo.FlatService;
+import pl.grabowski_durka.bo.VotingService;
 
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -15,12 +16,14 @@ public class MainPageController {
 
     private final BuildingService buildingService;
     private final FlatService flatService;
+    private final VotingService votingService;
 
     @GetMapping(value = "/")
     public ModelAndView mainPage() {
         ModelAndView mav = new ModelAndView("main");
-        mav.addObject("buildings",buildingService);
-        mav.addObject("flats",flatService);
+        mav.addObject("buildings", buildingService);
+        mav.addObject("flats", flatService);
+        //mav.addObject("resolutions", votingService.countResolutions());
         return mav;
     }
 

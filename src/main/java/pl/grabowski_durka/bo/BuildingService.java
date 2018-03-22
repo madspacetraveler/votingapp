@@ -20,18 +20,6 @@ public class BuildingService {
 
     private final BuildingRepository buildingRepository;
 
-
-    public List<BuildingDto> findBuildings(){
-        return buildingRepository.findAll()
-                .stream()
-                .map(this::mapBuilding)
-                .collect(Collectors.toList());
-    }
-
-    public BuildingDto findBuildingById(Long id){
-        return mapBuilding(buildingRepository.findOne(id));
-    }
-
     private BuildingDto mapBuilding(Building building) {
         return BuildingDto.builder()
                 .id(building.getId())
@@ -40,10 +28,19 @@ public class BuildingService {
                 .flatCount(building.getFlatCount())
                 .build();
     }
+
     public Long countBuildings(){
         return buildingRepository.findAll().stream().count();
     }
 
+    public BuildingDto findBuildingById(Long id){
+        return mapBuilding(buildingRepository.findOne(id));
+    }
 
-
+    public List<BuildingDto> findBuildings(){
+        return buildingRepository.findAll()
+                .stream()
+                .map(this::mapBuilding)
+                .collect(Collectors.toList());
+    }
 }
