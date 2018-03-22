@@ -31,6 +31,7 @@
         <div class="col-sm-1">ID: </div>
         <div class="col-sm-6">Adres:</div>
         <div class="col-sm-2">Mieszkań:</div>
+        <div class="col-sm-2">Powierzchnia:</div>
         <div class="w-100"></div>
     </div>
         <c:forEach items="${buildings}" var="building">
@@ -38,6 +39,7 @@
         <div class="col-sm-1">${building.id}</div>
         <div class="col-sm-6">${building.adres}</div>
         <div class="col-sm-2">${flats.countFlatsInBuilding(building.id)}</div>
+        <div class="col-sm-2">${flats.allFlatsInBuildingArea(building.id)}</div>
         <div class="w-100 border-bottom"></div>
     </div>
         </c:forEach>

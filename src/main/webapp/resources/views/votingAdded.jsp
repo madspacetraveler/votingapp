@@ -21,9 +21,10 @@
 <body>
 <jsp:include page="menu.jsp" />
 <div class="row justify-content-xl-center">
-<h1>Głosowanie zakończone</h1>
-    <h2>Głosowanie zostało dodane do bazy</h2>
-
+    <h1>Głosowanie zakończone</h1>
+    <div class="w-100 mb-3"></div>
+    <h3 class="text-success">Głosowanie zostało dodane do bazy</h3>
+    <div class="w-100 mb-3"></div>
     <a href="votings">Zobacz listę głosowań</a>
 </div>
 

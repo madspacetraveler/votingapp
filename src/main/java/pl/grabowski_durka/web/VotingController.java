@@ -78,6 +78,12 @@ public class VotingController {
         return "redirect: ../votingAdded";
     }
 
+    @GetMapping(value = "/votingAdded")
+    public String votingAddedPage() {
+        return "votingAdded";
+    }
+
+
 //    protected Map referenceData(HttpServletRequest request) throws Exception {
 //
 //        Map referenceData = new HashMap();

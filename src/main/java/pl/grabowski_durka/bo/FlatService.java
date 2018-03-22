@@ -65,4 +65,12 @@ public class FlatService {
                 .sum();
     }
 
+    public Double allFlatsInBuildingArea(Long id){
+        return flatRepository.findByBuildingId(id)
+                .stream()
+                .filter(flat -> flat.getArea() > 0)
+                .mapToDouble(flat -> flat.getArea())
+                .sum();
+    }
+
 }
