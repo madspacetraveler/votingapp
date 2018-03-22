@@ -1,8 +1,6 @@
 package pl.grabowski_durka.entity;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -15,6 +13,8 @@ import java.sql.Date;
 @Entity
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "votings", schema = "public")
 
 public class Voting {
