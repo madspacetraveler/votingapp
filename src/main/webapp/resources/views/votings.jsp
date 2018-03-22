@@ -1,50 +1,37 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Marcin
-  Date: 15.03.2018
-  Time: 20:20
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
     <title>Głosowania</title>
-    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <jsp:include page="include/resurces.jsp"/>
 </head>
 <body>
-<jsp:include page="menu.jsp" />
+<jsp:include page="include/menu.jsp" />
     <div class="container justify-content-xl-center">
-        <div class="row ">
-            <div class="col">
-                <h4>Lista głosowań:</h4>
-            </div>
-        </div>
-        <div class="row bg-dark text-white">
-            <div class="col-sm-1">ID: </div>
-            <div class="col-sm-3">Adres:</div>
-            <div class="col-sm-2">Data:</div>
-            <div class="col-sm-5">Tytuł:</div>
-            <div class="col-sm-1">Wynik:</div>
-            <div class="w-100"></div>
-        </div>
-        <c:forEach items="${votings}" var="voting">
-            <div class="row row-striped border-left border-right">
-                <div class="col-sm-1">${voting.id}</div>
-                <div class="col-sm-3">${voting.adres}</div>
-                <div class="col-sm-2">${voting.date}</div>
-                <div class="col-sm-5">${voting.title}</div>
-                <div class="col-sm-1">${voting.result}</div>
-                <div class="w-100 border-bottom"></div>
-            </div>
-        </c:forEach>
+        <input type="text" id="myInput" onkeyup="filterByColumn(3)" placeholder="Filtruj po tytule" class="form-control text-center">
+        <table id="myTable" class="table">
+            <tr class="header bg-dark text-white">
+                <th scope="col-sm-1">ID</th>
+                <th scope="col-sm-3">Adres:</th>
+                <th scope="col-sm-2">Data:</th>
+                <th scope="col-sm-5">Tytuł:</th>
+                <th scope="col-sm-1">Wynik:</th>
+            </tr>
+            <c:forEach items="${votings}" var="voting">
+                <tr scope="row" class="row-striped border-left border-right border-bottom text-dark">
+                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.id}</a></td>
+                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.adres}</a></td>
+                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.date}</a></td>
+                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.title}</a></td>
+                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.result}</a></td>
+                </tr>
+            </c:forEach>
+            <tr class="row-striped border-left border-right border-bottom bg-dark text-white">
+                <td colspan="4" class="text-center">Ilość przeprowadzonych głosowań: ${countVotings}, przyjęto uchwał: ${countResolutions}</td>
+            </tr>
+        </table>
     </div>
-<jsp:include page="footer.jsp" />
+<jsp:include page="include/footer.jsp" />
 </body>
 </html>

@@ -2,21 +2,17 @@
 <html>
 <head>
     <title>Szczegóły Mieszkania</title>
-    <jsp:include page="include/resurces.jsp"/></head>
+    <jsp:include page="include/resurces.jsp"/>
+</head>
 <body>
 <jsp:include page="include/menu.jsp" />
 <div class="container justify-content-lg-center">
-    Szczegóły Mieszkania:
+    Szczegóły właściciela:
     <div class="w-100"></div>
-    ID: ${flat.id}
+    ID: ${owner.id}
     <div class="w-100"></div>
-    Powierzchnia: ${flat.area}
+    ${owner.name} ${owner.surname}
     <div class="w-100"></div>
-    Adres: ${flat.building.adres}
-    <div class="w-100"></div>
-    Numer mieszkania: ${flat.flatNumber}
-    <div class="w-100"></div>
-    Właściciel: ${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}
 </div>
 <jsp:include page="include/footer.jsp" />
 </body>

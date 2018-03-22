@@ -98,9 +98,14 @@ public class VotingService {
                 .build();
     }
 
-    public Long countResolutions(){ return (long) votingRepository.findAll().size(); }
-
     public Long countVotings(){ return (long) votingRepository.findAll().size(); }
+
+    public Long countResolutions(){
+        return votingRepository.findAll()
+                .stream()
+                .filter(voting -> voting.isResult())
+                .count();
+    }
 
     public List<VotingDto> findVotings() {
         return votingRepository.findAll()

@@ -37,6 +37,8 @@ public class VotingController {
     public ModelAndView votingsPage() {
         ModelAndView mav = new ModelAndView("votings");
         mav.addObject("votings", votingService.findVotings());
+        mav.addObject("countVotings", votingService.countVotings());
+        mav.addObject("countResolutions", votingService.countResolutions());
         return mav;
     }
 

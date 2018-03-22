@@ -22,6 +22,7 @@ public class BuildingController {
     public ModelAndView buildingsPage(){
         ModelAndView mav = new ModelAndView("buildings");
         mav.addObject("buildings",buildingService.findBuildings());
+        mav.addObject("countBuildings",buildingService.countBuildings());
         mav.addObject("flats",flatService);
         return mav;
     }

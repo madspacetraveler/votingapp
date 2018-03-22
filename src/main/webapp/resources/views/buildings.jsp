@@ -4,37 +4,32 @@
 <html>
 <head>
     <title>building page</title>
-    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <jsp:include page="include/resurces.jsp"/>
 </head>
 <body>
-<jsp:include page="menu.jsp" />
+<jsp:include page="include/menu.jsp" />
 <div class="container justify-content-xl-center">
-    <div class="row ">
-        <div class="col">
-            <h4>Lista budynków: </h4>
-        </div>
-    </div>
-    <div class="row bg-dark text-white">
-        <div class="col-sm-1">ID: </div>
-        <div class="col-sm-6">Adres:</div>
-        <div class="col-sm-2">Mieszkań:</div>
-        <div class="col-sm-2">Powierzchnia:</div>
-        <div class="w-100"></div>
-    </div>
+    <input type="text" id="myInput" onkeyup="filterByColumn(1)" placeholder="Filtruj po adresie" class="form-control text-center">
+    <table id="myTable" class="table">
+        <tr class="header bg-dark text-white">
+            <th scope="col-sm-1">ID</th>
+            <th scope="col-sm-6">Adres:</th>
+            <th scope="col-sm-2">Mieszkań:</th>
+            <th scope="col-sm-2">Powierzchnia:</th>
+        </tr>
         <c:forEach items="${buildings}" var="building">
-    <div class="row row-striped border-left border-right">
-        <div class="col-sm-1">${building.id}</div>
-        <div class="col-sm-6">${building.adres}</div>
-        <div class="col-sm-2">${flats.countFlatsInBuilding(building.id)}</div>
-        <div class="col-sm-2">${flats.allFlatsInBuildingArea(building.id)}</div>
-        <div class="w-100 border-bottom"></div>
-    </div>
+            <tr scope="row" class="row-striped border-left border-right border-bottom text-dark">
+                <td><a href="/buildings/${building.id}" class="text-dark">${building.id}</a></td>
+                <td><a href="/buildings/${building.id}" class="text-dark">${building.adres}</a></td>
+                <td><a href="/buildings/${building.id}" class="text-dark">${flats.countFlatsInBuilding(building.id)}</a></td>
+                <td><a href="/buildings/${building.id}" class="text-dark">${flats.allFlatsInBuildingArea(building.id)}</a></td>
+            </tr>
         </c:forEach>
+        <tr class="row-striped border-left border-right border-bottom bg-dark text-white">
+            <td colspan="4" class="text-center">Ilość mieszkań w bazie: ${countBuildings}</td>
+        </tr>
+    </table>
 </div>
-<jsp:include page="footer.jsp" />
+<jsp:include page="include/footer.jsp" />
 </body>
 </html>

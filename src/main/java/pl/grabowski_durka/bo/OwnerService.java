@@ -22,14 +22,21 @@ public class OwnerService {
     private List<OwnerDto> owners = new ArrayList<>();
 
     public List<OwnerDto> findOwners() {
-        owners = ownerRepository.findAll()
+        return ownerRepository.findAll()
                 .stream()
-                .map(this::mapFlats)
+                .map(this::mapOwners)
                 .collect(Collectors.toList());
-        return owners;
     }
 
-    private OwnerDto mapFlats(Owner owner) {
+    public Long countOwners(){
+        return ownerRepository.findAll().stream().count();
+    }
+
+    public OwnerDto findOwnerById(Long id){
+        return mapOwners(ownerRepository.findOne(id));
+    }
+
+    private OwnerDto mapOwners(Owner owner) {
         return OwnerDto.builder()
         .id(owner.getId())
         .name(owner.getName())
@@ -40,8 +47,10 @@ public class OwnerService {
         .build();
     }
 
+
     public OwnerDto findOwnerOfFlat(Long id){
-        return owners.stream()
+        return owners
+                .stream()
                 .filter(owner -> owner.getId().equals(id))
                 .findFirst()
                 .orElseThrow(()-> new NoSuchElementException());

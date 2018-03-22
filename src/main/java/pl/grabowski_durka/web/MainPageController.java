@@ -23,7 +23,7 @@ public class MainPageController {
         ModelAndView mav = new ModelAndView("main");
         mav.addObject("buildings", buildingService);
         mav.addObject("flats", flatService);
-        //mav.addObject("resolutions", votingService.countResolutions());
+        mav.addObject("resolutions", votingService);
         return mav;
     }
 
