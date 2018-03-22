@@ -38,7 +38,7 @@ public class VotingService {
                 .votesAbstain(voting.getVotesAbstain())
                 .moderator(voting.getModerator())
                 .secretary(voting.getSecretary())
-                .result(voting.getResult())
+                .result(voting.isResult())
                 .resultContent(voting.getResultContent())
                 .flatVoteDtoList(flatService.findFlatsWithBuildingId(voting.getBuildingId()))
                 .build();
@@ -78,6 +78,7 @@ public class VotingService {
         return Voting.builder()
                 .id(votingDto.getId())
                 .buildingId(votingDto.getBuilding().getId())
+                .adres(votingDto.getBuilding().getAdres())
                 .date(votingDto.getDate())
                 .resolution(votingDto.getResolution())
                 .title(votingDto.getTitle())
