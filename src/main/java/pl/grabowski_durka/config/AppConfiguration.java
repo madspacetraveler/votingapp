@@ -13,7 +13,6 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @ComponentScan(basePackages = {"pl.grabowski_durka"})
-
 @EnableWebMvc
 public class AppConfiguration extends WebMvcConfigurerAdapter {
 

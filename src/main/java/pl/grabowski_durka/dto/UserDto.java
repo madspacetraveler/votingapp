@@ -15,6 +15,9 @@ import javax.persistence.Column;
 public class UserDto {
     private Long id;
     private String username;
+    private String email;
     private String password;
+    private String matchingPassword;
     private String rank;
+    private boolean active;
 }
