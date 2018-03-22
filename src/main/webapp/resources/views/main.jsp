@@ -58,23 +58,6 @@
             </div>
         </div>
     </div>
-
-
-
-<%--    <div class="btn-group btn-group-lg">
-        <a href="buildings" class="btn btn-info">Przeglądaj listę budynków</a>
-        <a href="resolutions" class="btn btn-info">Podjęte uchwały</a>
-        <a href="flats" class="btn btn-info">Lista mieszkań</a>
-        <div class="btn-group btn-group-lg">
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                Głosowania <span class="caret"></span></button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="preVoteForm">Rozpocznij</a>
-                <a class="dropdown-item" href="votingHistory">Historia</a>
-            </div>
-        </div>
-    </div>--%>
-
-
+<jsp:include page="footer.jsp" />
 </body>
 </html>

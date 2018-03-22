@@ -1,58 +1,40 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: cinus
-  Date: 18-03-17
-  Time: 23:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
     <title>building page</title>
-    <link href="${pageContext.servletContext.contextPath}/resources/css/app.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/app.css"/>" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="<c:url value="/resources/js/myScripts.js"/>"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 </head>
 <body>
 <jsp:include page="menu.jsp" />
 <div class="container justify-content-xl-center">
-    <div class="row">
-        <div class="col">
-            <h4>Lista mieszkań: </h4>
-        </div>
-    </div>
-
-        <div class="row bg-dark text-white">
-            <div class="col-sm-1">ID: </div>
-            <div class="col-sm-2">Powierzchnia:</div>
-            <div class="col-sm-3">Adres budynku:</div>
-            <div class="col-sm-1">Nr m.</div>
-            <div class="col-sm-4">Właściciel</div>
-            <div class="w-100"></div>
-        </div>
-
+    <input type="text" id="myInput" onkeyup="filterFlatsByAdres()" placeholder="Filtruj po adresie" class="form-control text-center">
+    <table id="myTable" class="table">
+        <tr class="header bg-dark text-white">
+            <th scope="col-sm-1">ID</th>
+            <th scope="col-sm-5">Adres budynku</th>
+            <th scope="col-sm-4">Właściciel</th>
+            <th scope="col-sm-2">Powierzchnia</th>
+        </tr>
         <c:forEach items="${flats}" var="flat">
-            <div class="row-striped row border-left border-right">
-                <div class="col-sm-1">${flat.id}</div>
-                <div class="col-sm-2">${flat.area}</div>
-                <div class="col-sm-3">${flat.building.adres}</div>
-                <div class="col-sm-1">${flat.flatNumber}</div>
-                <div class="col-sm-4">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</div>
-
-           <%--     <c:if test="${flat.id==}"--%>
-
-                <div class="w-100 border-bottom"></div>
-            </div>
+            <tr scope="row" class="row-striped border-left border-right border-bottom text-dark">
+                <td><a href="/flats/${flat.id}" class="text-dark">${flat.id}</a></td>
+                <td><a href="/flats/${flat.id}" class="text-dark">${flat.building.adres}, m.${flat.flatNumber}</a></td>
+                <td><a href="/flats/${flat.id}" class="text-dark">${flat.authorizedVoter.name} ${flat.authorizedVoter.surname}</a></td>
+                <td><a href="/flats/${flat.id}" class="text-dark">${flat.area}</a></td>
+            </tr>
         </c:forEach>
-
+        <tr class="row-striped border-left border-right border-bottom bg-dark text-white">
+            <td colspan="4" class="text-center">Ilość mieszkań w bazie: ${countFlats}</td>
+        </tr>
+    </table>
 </div>
-
-
-
+<jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -1,15 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: cinus
-  Date: 18-03-17
-  Time: 16:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
-
 <html>
 <head>
     <title>VotingApp</title>
@@ -18,17 +10,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 </head>
 <body>
 <jsp:include page="menu.jsp" />
 <div class="container justify-content-xl-center">
     <div class="row pl-5">
         <h4>Budynek: ${voting.building.adres}</h4>
-
         <div class="w-100"></div>
     </div>
-
         <form:form action="apply" modelAttribute="voting" method="post">
             <form:input type="hidden" path="building.area"/><br>
              <div class="input-group mb-3">
@@ -61,7 +50,6 @@
                 </div>
                 <form:input path="secretary" type="text" class="form-control" placeholder="Sekretarz" aria-label="Sekretarz" aria-describedby="basic-addon4"/><br>
             </div>
-
     <div class="row justify-content-xl-center">
         <div class="col">
             <h4>Lista mieszkań: </h4>
@@ -77,9 +65,7 @@
             <div class="col-sm-2">Wstrzymał się:</div>
         </div>
         <div class="w-100"></div>
-
         <c:forEach items="${voting.flatVoteDtoList}" var="flat" varStatus="flatStatus">
-
             <div class="row row-striped border-left border-right">
                 <div class="col-sm-1">${flat.id}</div>
                 <div class="col-sm-1">${flat.flatNumber}</div>
@@ -103,13 +89,8 @@
                 <input type="submit" name="apply" value="Zatwierdź" class="btn btn-success btn-lg m-3">
                 <input type="submit" name="cancel" value="Anuluj" class="btn btn-danger btn-lg m-3">
             </div>
-
         </form:form>
-
-
-
-
-
 </div>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -82,17 +82,4 @@ public class VotingController {
     public String votingAddedPage() {
         return "votingAdded";
     }
-
-
-//    protected Map referenceData(HttpServletRequest request) throws Exception {
-//
-//        Map referenceData = new HashMap();
-//        List<String> webFrameworkList = new ArrayList<String>();
-//        webFrameworkList.add("voteFor");
-//        webFrameworkList.add("voteAgainst");
-//        webFrameworkList.add("voteAbstain");
-//        referenceData.put("webFrameworkList", webFrameworkList);
-//
-//        return referenceData;
-//    }
 }

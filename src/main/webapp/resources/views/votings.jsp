@@ -20,36 +20,31 @@
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-<div class="container justify-content-xl-center">
-    <div class="row ">
-        <div class="col">
-            <h4>Lista głosowań:</h4>
+    <div class="container justify-content-xl-center">
+        <div class="row ">
+            <div class="col">
+                <h4>Lista głosowań:</h4>
+            </div>
         </div>
-    </div>
-    <div class="row bg-dark text-white">
-        <div class="col-sm-1">ID: </div>
-        <div class="col-sm-3">Adres:</div>
-        <div class="col-sm-2">Data:</div>
-        <div class="col-sm-5">Tytuł:</div>
-        <div class="col-sm-1">Wynik:</div>
-        <div class="w-100"></div>
-    </div>
-    <c:forEach items="${votings}" var="voting">
-        <div class="row row-striped border-left border-right">
-            <div class="col-sm-1">${voting.id}</div>
-            <div class="col-sm-3">${voting.building.adres}</div>
-            <div class="col-sm-2">${voting.date}</div>
-            <div class="col-sm-5">${voting.title}</div>
-            <div class="col-sm-1">${voting.result}</div>
-            <div class="w-100 border-bottom"></div>
+        <div class="row bg-dark text-white">
+            <div class="col-sm-1">ID: </div>
+            <div class="col-sm-3">Adres:</div>
+            <div class="col-sm-2">Data:</div>
+            <div class="col-sm-5">Tytuł:</div>
+            <div class="col-sm-1">Wynik:</div>
+            <div class="w-100"></div>
         </div>
-    </c:forEach>
-
-</div>
-
-
-
-
-
+        <c:forEach items="${votings}" var="voting">
+            <div class="row row-striped border-left border-right">
+                <div class="col-sm-1">${voting.id}</div>
+                <div class="col-sm-3">${voting.building.adres}</div>
+                <div class="col-sm-2">${voting.date}</div>
+                <div class="col-sm-5">${voting.title}</div>
+                <div class="col-sm-1">${voting.result}</div>
+                <div class="w-100 border-bottom"></div>
+            </div>
+        </c:forEach>
+    </div>
+<jsp:include page="footer.jsp" />
 </body>
 </html>
