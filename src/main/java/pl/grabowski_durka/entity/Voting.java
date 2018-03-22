@@ -26,7 +26,7 @@ public class Voting {
     @Column(name = "buildindId")
     private Long buildingId;
 
-    @Column
+    @Column(name = "adres")
     private String adres;
 
     @Column(name = "date")
@@ -61,4 +61,6 @@ public class Voting {
 
     @Column(name = "result_content")
     private String resultContent;
+
+
 }

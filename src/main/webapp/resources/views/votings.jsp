@@ -37,7 +37,7 @@
         <c:forEach items="${votings}" var="voting">
             <div class="row row-striped border-left border-right">
                 <div class="col-sm-1">${voting.id}</div>
-                <div class="col-sm-3">${voting.building.adres}</div>
+                <div class="col-sm-3">${voting.adres}</div>
                 <div class="col-sm-2">${voting.date}</div>
                 <div class="col-sm-5">${voting.title}</div>
                 <div class="col-sm-1">${voting.result}</div>

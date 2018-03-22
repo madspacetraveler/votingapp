@@ -17,6 +17,7 @@ public class VotingDto {
 
     private Long id;
     private Long buildingId;
+    private String adres;
     private BuildingDto building;
     private Date date;
     private String resolution;

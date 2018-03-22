@@ -30,6 +30,7 @@ public class VotingService {
                 .id(voting.getId())
                 //                .buildingId(voting.getBuildingId())
                 .date(voting.getDate())
+                .adres(voting.getAdres())
                 .resolution(voting.getResolution())
                 .title(voting.getTitle())
                 .content(voting.getContent())
