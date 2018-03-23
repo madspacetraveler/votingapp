@@ -17,6 +17,7 @@
                 <th scope="col-sm-2">Data:</th>
                 <th scope="col-sm-5">Tytuł:</th>
                 <th scope="col-sm-1">Wynik:</th>
+                <!--- --->
             </tr>
             <c:forEach items="${votings}" var="voting">
                 <tr scope="row" class="row-striped border-left border-right border-bottom text-dark">
