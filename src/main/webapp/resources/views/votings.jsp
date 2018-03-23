@@ -17,14 +17,18 @@
                 <th scope="col-sm-2">Data:</th>
                 <th scope="col-sm-5">Tytuł:</th>
                 <th scope="col-sm-1">Wynik:</th>
+                <!--- --->
             </tr>
             <c:forEach items="${votings}" var="voting">
                 <tr scope="row" class="row-striped border-left border-right border-bottom text-dark">
-                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.id}</a></td>
-                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.adres}</a></td>
-                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.date}</a></td>
+                    <td class="text-dark">${voting.id}</td>
+                    <td class="text-dark">${voting.adres}</td>
+                    <td class="text-dark">${voting.date}</td>
                     <td><a href="/votings/${voting.id}" class="text-dark">${voting.title}</a></td>
-                    <td><a href="/votings/${voting.id}" class="text-dark">${voting.result}</a></td>
+                    <td class="text-dark">
+                        <c:if test="${voting.result == true}">uchwalona</c:if>
+                        <c:if test="${voting.result == false}">odrzucona</c:if>
+                    </td>
                 </tr>
             </c:forEach>
             <tr class="row-striped border-left border-right border-bottom bg-dark text-white">
