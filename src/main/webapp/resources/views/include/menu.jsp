@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <div class="row justify-content-xl-center">
     <div class="row">
         <div class="row justify-content-xl-center">
@@ -35,6 +36,12 @@
                     <a class="dropdown-item" href="${pageContext.servletContext.contextPath}/votingHistory">Historia</a>
                 </div>
             </div>
-        </div>
+            <sec:authorize access="isAnonymous()">
+                <a href="${pageContext.servletContext.contextPath}/login" class="btn btn-info">Zaloguj się</a>
+            </sec:authorize>
+            <sec:authorize access="isAuthenticated()">
+                <a href="${pageContext.servletContext.contextPath}/logout" class="btn btn-info">Wyloguj się</a>
+            </sec:authorize>
+            </div>
     </div>
 </div>
