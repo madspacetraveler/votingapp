@@ -8,7 +8,7 @@ import javax.persistence.*;
 /**
  * @author Marcin
  */
-
+@lombok.Getter
 @Entity
 @Table(name = "users")
 public class User {
