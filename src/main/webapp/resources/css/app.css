@@ -1,0 +1,19 @@
+
+.row-striped:nth-child(even){
+    background-color: lavender;
+}
+
+.bg-lightgrey{
+    background-color: lightgrey;
+}
+
+.row-striped-admin:nth-child(even){
+    background-color: darksalmon;
+}
+.row-striped-admin:nth-child(odd){
+    background-color: coral;
+}
+
+.bg-admin{
+    background-color: #ffc7b6;
+}

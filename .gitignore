@@ -1,0 +1,5 @@
+*.class
+target/
+src/main/java/pl.votingapp/config/DatabaseConfig.java
+src/main/java/pl/votingapp/config/DatabaseConfig.java
+.idea/
