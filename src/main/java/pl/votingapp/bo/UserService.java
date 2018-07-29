@@ -7,6 +7,7 @@ import pl.votingapp.dto.UserDto;
 import pl.votingapp.entity.User;
 import pl.votingapp.repository.UserRepository;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,6 +21,20 @@ public class UserService {
                 .stream()
                 .map(this::mapUser)
                 .collect(Collectors.toList());
+    }
+
+    public Optional<UserDto> findUser(String name){
+        return userRepository.findAll()
+                .stream()
+                .filter(user -> user.getName().contains(name))
+                .map(this::mapUser)
+                .findFirst();
+    }
+
+    public long countUsers(){
+        return userRepository.findAll()
+                .stream()
+                .count();
     }
 
     private UserDto mapUser(User user) {

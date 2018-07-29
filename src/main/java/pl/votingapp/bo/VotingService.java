@@ -20,6 +20,7 @@ public class VotingService {
     private final VotingRepository votingRepository;
     private final FlatService flatService;
 
+
     private VotingDto mapVotings(Voting voting) {
         return VotingDto.builder()
                 .id(voting.getId())
@@ -138,7 +139,10 @@ public class VotingService {
                 .build();
     }
 
-    public Long countVotings(){ return (long) votingRepository.findAll().size(); }
+    public Long countVotings(){
+        return (long) votingRepository.findAll()
+                .size();
+    }
 
     public Long countEligibleVotings(VotingDto votingDto){
         return votingDto.getFlatVoteDtoList().stream().count(); }
@@ -161,7 +165,7 @@ public class VotingService {
         return votingRepository.findAll()
                 .stream()
                 .filter(Voting::isResult)
-                .map(this::mapVotings)
+                .map(voting -> mapVotings(voting))
                 .collect(Collectors.toList());
     }
 
